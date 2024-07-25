@@ -37,7 +37,11 @@ const Button = styled(motion.button)`
   border-radius: 7vw;
   margin-top: 6vw;
   margin-left: 8.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   p:nth-child(1) {
+    margin: 0;
     font-size: 1.3vw;
     color: black;
   }

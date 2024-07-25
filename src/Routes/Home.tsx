@@ -7,11 +7,18 @@ import AboutRelease from "../Components/Home/AboutRelease";
 import Activity from "../Components/Home/Activity";
 import Support from "../Components/Home/Support";
 import Footer from "../Components/Footer";
+import Slide from "../Components/Home/Slide";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 80px 800px 750px 750px 550px 330px;
+  grid-template-rows: 90px 800px 750px 750px 550px 330px;
   background-color: #1c1c1c;
+  @media (max-width: 1000px) {
+    grid-template-rows: 90px 500px 750px 550px 500px 330px;
+  }
+  @media (max-width: 1000px) {
+    grid-template-rows: 90px 500px 650px 550px 500px 250px;
+  }
 `;
 
 const Banner = styled.div`
@@ -30,6 +37,8 @@ const SecondBox = styled.div`
 
 const ThirdBox = styled.div`
   background-color: #292929;
+  display: grid;
+  grid-template-columns: 7fr 6fr;
 `;
 
 const FourthBox = styled.div`
@@ -56,6 +65,7 @@ function Home() {
       </SecondBox>
       <ThirdBox>
         <Activity />
+        <Slide />
       </ThirdBox>
       <FourthBox>
         <Support />

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +19,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Image = styled.div`
+const ImageBase = styled.div`
   margin-top: 70px;
   width: 800px;
   display: flex;
@@ -32,12 +34,37 @@ const Image = styled.div`
   }
 `;
 
+const Image = motion(ImageBase);
+
+const imageVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { ease: "easeOut" } },
+};
+
+const wrapperVariants = {
+  hover: {
+    transition: { staggerChildren: 0.3 },
+    opacity: 1,
+  },
+};
+
 function Support() {
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <Wrapper>
+    <Wrapper
+      variants={wrapperVariants}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(true)}
+      initial="hidden"
+      animate={isHovered ? "hover" : "hidden"}
+    >
       <p>제휴 및 후원</p>
       <p>Release와 함께하는 기업들입니다.</p>
-      <Image>
+      <Image
+        variants={imageVariants}
+        initial="hidden"
+        animate={isHovered ? "visible" : "hidden"}
+      >
         <img src="../img/naver.png" />
         <img src="../img/mobis.png" />
       </Image>

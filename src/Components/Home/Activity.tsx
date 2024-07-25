@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr;
 `;
 
 const First = styled.div`
@@ -15,12 +14,12 @@ const Text = styled.div`
   flex-direction: column;
   p:nth-child(1) {
     color: #eeeeee;
-    font-size: 36px;
+    font-size: 2.4vw;
     margin-bottom: 36px;
   }
   p:nth-child(n + 2) {
     color: #999999;
-    font-size: 18px;
+    font-size: 1.1vw;
     margin-bottom: 8px;
   }
 `;

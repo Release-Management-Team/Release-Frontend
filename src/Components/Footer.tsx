@@ -2,25 +2,47 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   background-color: #292929;
-  padding-left: 70px;
-  padding-top: 90px;
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  position: relative;
+`;
+
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  color: white;
-  gap: 15px;
+  justify-content: space-between;
+  left: 5.5vw;
+  top: 6vw;
+  position: absolute;
+  gap: 50px;
+`;
+
+const FirstInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   img {
-    width: 120px;
-  }
-  p:nth-child(3) {
-    margin-top: 70px;
-    font-weight: 400;
-    font-size: 13px;
+    width: 6vw;
+    margin-bottom: 1.2vw;
   }
 `;
 
-const SecondText = styled.div`
+const PlusInfo = styled.div`
   display: flex;
-  gap: 80px;
+  gap: 15px;
+  p {
+    font-size: 1vw;
+    color: white;
+    margin-right: 3.5vw;
+  }
+`;
+
+const SecondInfo = styled.div`
+  p {
+    font-weight: 400;
+    font-size: 0.9vw;
+    color: white;
+  }
 `;
 
 const Phone = styled.div`
@@ -28,21 +50,29 @@ const Phone = styled.div`
   flex-direction: column;
   font-weight: 400;
   gap: 15px;
-  font-size: 14px;
+  font-size: 1vw;
 `;
 
 function Footer() {
   return (
     <Wrapper>
-      <img src="../img/logo3.png" />
-      <SecondText>
-        <p>서강대학교 컴퓨터공학과 프로젝트 학회</p>
-        <Phone>
-          <p>02-000-0000&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;00@sogang.ac.kr</p>
-          <p>서강대학교 00관 00호</p>
-        </Phone>
-      </SecondText>
-      <p>© 2024 Release All rights reserved.</p>
+      <Container>
+        <FirstInfo>
+          <img src="../img/logo3.png" />
+          <PlusInfo>
+            <p>서강대학교 컴퓨터공학과 프로젝트 학회</p>
+            <Phone>
+              <p>
+                02-000-0000&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;00@sogang.ac.kr
+              </p>
+              <p>서강대학교 00관 00호</p>
+            </Phone>
+          </PlusInfo>
+        </FirstInfo>
+        <SecondInfo>
+          <p>© 2024 Release All rights reserved.</p>
+        </SecondInfo>
+      </Container>
     </Wrapper>
   );
 }

@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,14 +35,36 @@ const Images = styled.div`
   }
 `;
 
-const Blank = styled.div`
+const BlankBase = styled.div`
   background-color: gray;
   border-radius: 30px;
 `;
 
+const Blank = motion(BlankBase);
+
+const imageVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { ease: "easeOut" } },
+};
+
+const wrapperVariants = {
+  hover: {
+    transition: { staggerChildren: 0.3 },
+    opacity: 1,
+  },
+};
+
 function AboutRelease() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <Wrapper>
+    <Wrapper
+      variants={wrapperVariants}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(true)}
+      initial="hidden"
+      animate={isHovered ? "hover" : "hidden"}
+    >
       <p>Release를 소개합니다</p>
       <p>
         Release는 2014년에 창립된 서강대학교 컴퓨터공학과 유일의 프로젝트
@@ -52,10 +76,26 @@ function AboutRelease() {
         사람을 모집 중입니다.
       </p>
       <Images>
-        <Blank />
-        <Blank />
-        <Blank />
-        <Blank />
+        <Blank
+          variants={imageVariants}
+          initial="hidden"
+          animate={isHovered ? "visible" : "hidden"}
+        />
+        <Blank
+          variants={imageVariants}
+          initial="hidden"
+          animate={isHovered ? "visible" : "hidden"}
+        />
+        <Blank
+          variants={imageVariants}
+          initial="hidden"
+          animate={isHovered ? "visible" : "hidden"}
+        />
+        <Blank
+          variants={imageVariants}
+          initial="hidden"
+          animate={isHovered ? "visible" : "hidden"}
+        />
       </Images>
     </Wrapper>
   );
