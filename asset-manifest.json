@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Release-Frontend/static/js/main.465090c7.js",
+    "main.js": "/Release-Frontend/static/js/main.e51614ea.js",
     "index.html": "/Release-Frontend/index.html",
-    "main.465090c7.js.map": "/Release-Frontend/static/js/main.465090c7.js.map"
+    "main.e51614ea.js.map": "/Release-Frontend/static/js/main.e51614ea.js.map"
   },
   "entrypoints": [
-    "static/js/main.465090c7.js"
+    "static/js/main.e51614ea.js"
   ]
 }
