@@ -1,19 +1,31 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
-import Home from "./Routes/Home";
-import Project from "./Routes/Project";
-import History from "./Routes/History";
+import Home from "./Routes/Big/Home";
+import Project from "./Routes/Big/Project";
+import History from "./Routes/Big/History";
+import { useMediaQuery } from "react-responsive";
+import SmallHome from "./Routes/Small/SmallHome";
+import SmallProject from "./Routes/Small/SmallProject";
+import SmallHistory from "./Routes/Small/SmallHistory";
+import About from "./Routes/Big/About";
+import SmallAbout from "./Routes/Small/SmallAbout";
 
 function App() {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 730px)" });
+  const SelectHome = isBigScreen ? Home : SmallHome;
+  const SelectAbout = isBigScreen ? About : SmallAbout;
+  const SelectHistory = isBigScreen ? History : SmallHistory;
+  const SelectProject = isBigScreen ? Project : SmallProject;
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="history" element={<History />}></Route>
-        <Route path="project" element={<Project />}></Route>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="about" element={<SelectAbout />}></Route>
+        <Route path="history" element={<SelectHistory />}></Route>
+        <Route path="project" element={<SelectProject />}></Route>
+        <Route path="/" element={<SelectHome />}></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

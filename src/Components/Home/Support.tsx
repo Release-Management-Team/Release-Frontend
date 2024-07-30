@@ -21,16 +21,19 @@ const Wrapper = styled(motion.div)`
 
 const ImageBase = styled.div`
   margin-top: 70px;
-  width: 800px;
+  width: 600px;
+  @media (max-width: 1000px) {
+    width: 500px;
+  }
   display: flex;
   justify-content: space-between;
   gap: 250px;
   filter: brightness(0) invert(1);
   img:nth-child(1) {
-    height: 110px;
+    height: 6vw;
   }
   img:nth-child(2) {
-    height: 110px;
+    height: 6vw;
   }
 `;
 
@@ -65,8 +68,8 @@ function Support() {
         initial="hidden"
         animate={isHovered ? "visible" : "hidden"}
       >
-        <img src="../img/naver.png" />
-        <img src="../img/mobis.png" />
+        <img src={`${process.env.PUBLIC_URL}/img/naver.png`} />
+        <img src={`${process.env.PUBLIC_URL}/img/mobis.png`} />
       </Image>
     </Wrapper>
   );

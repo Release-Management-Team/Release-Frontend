@@ -33,6 +33,18 @@ const Images = styled.div`
   div:nth-child(2) {
     grid-column: 2 / span 2;
   }
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    div:nth-child(1) {
+      grid-row: 1 / span 2;
+    }
+    div:nth-child(2) {
+      grid-column: 2 / span 2;
+    }
+    div:nth-child(3) {
+      grid-column: 2 / span 2;
+    }
+  }
 `;
 
 const BlankBase = styled.div`

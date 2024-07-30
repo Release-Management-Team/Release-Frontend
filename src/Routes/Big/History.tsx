@@ -1,23 +1,34 @@
 import styled from "styled-components";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import Year2014 from "../Components/History/Year2014";
-import Year2019 from "../Components/History/Year2019";
-import Year2023 from "../Components/History/Year2023";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
+import Year2014 from "../../Components/History/Year2014";
+import Year2019 from "../../Components/History/Year2019";
+import Year2023 from "../../Components/History/Year2023";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 90px 2230px 330px;
+  grid-template-rows: 90px 2300px 330px;
   background-color: #1c1c1c;
   @media (max-width: 880px) {
-    grid-template-rows: 90px 1600px 250px;
+    grid-template-rows: 70px 1600px 250px;
   }
 `;
 
 const Banner = styled.div`
-  background: radial-gradient(circle at 50% 30%, #303030, rgb(27, 27, 27) 37%);
+  background: radial-gradient(
+    circle at 50% 700px,
+    #303030,
+    rgb(27, 27, 27) 37%
+  );
+  @media (max-width: 880px) {
+    background: radial-gradient(
+      circle at 50% 550px,
+      #303030,
+      rgb(27, 27, 27) 37%
+    );
+  }
 `;
 
 const Container = styled.div`

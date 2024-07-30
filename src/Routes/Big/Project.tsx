@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -15,13 +15,34 @@ const Wrapper = styled.div`
   @media (max-width: 1100px) {
     grid-template-rows: 90px 1450px 330px;
   }
+  @media (max-width: 880px) {
+    grid-template-rows: 70px 1450px 330px;
+  }
   @media (max-width: 940px) {
-    grid-template-rows: 90px 1250px 250px;
+    grid-template-rows: 70px 1250px 250px;
   }
 `;
 
 const Banner = styled.div`
-  background: radial-gradient(circle at 50% 30%, #303030, rgb(27, 27, 27) 37%);
+  background: radial-gradient(
+    circle at 50% 600px,
+    #303030,
+    rgb(27, 27, 27) 37%
+  );
+  @media (max-width: 1100px) {
+    background: radial-gradient(
+      circle at 50% 550px,
+      #303030,
+      rgb(27, 27, 27) 37%
+    );
+  }
+  @media (max-width: 940px) {
+    background: radial-gradient(
+      circle at 50% 500px,
+      #303030,
+      rgb(27, 27, 27) 37%
+    );
+  }
 `;
 
 const Container = styled.div`

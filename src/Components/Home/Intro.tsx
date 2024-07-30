@@ -118,7 +118,7 @@ function Intro() {
           variants={ThirdText}
           initial="start"
           animate="end"
-          src="../img/logo3.png"
+          src={`${process.env.PUBLIC_URL}/img/logo3.png`}
         />
       </Text>
       <Button variants={btnMotion} initial="start" animate="end">

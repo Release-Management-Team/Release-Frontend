@@ -9,6 +9,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   overflow: hidden;
+  height: 100%;
 `;
 
 const Boxes = styled(motion.div)`
@@ -32,30 +33,36 @@ const SlideBox = styled(motion.div)`
 
 function Slide() {
   const [height, setHeight] = useState(0);
+  const [gap, setGap] = useState(0);
   const yTranslation = useMotionValue(0);
   const ref = useRef<HTMLDivElement>(null);
+  const boxesRef = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<AnimationPlaybackControls | null>(null);
 
   useEffect(() => {
-    const calculateHeight = () => {
+    const calculateHeightAndGap = () => {
       if (ref.current) {
         const boxHeight = ref.current.offsetHeight;
         setHeight(boxHeight);
       }
+      if (boxesRef.current) {
+        const style = window.getComputedStyle(boxesRef.current);
+        const gap = parseFloat(style.gap);
+        setGap(gap);
+      }
     };
-
-    calculateHeight(); // Initial calculation
-    window.addEventListener("resize", calculateHeight);
+    calculateHeightAndGap();
+    window.addEventListener("resize", calculateHeightAndGap);
 
     return () => {
-      window.removeEventListener("resize", calculateHeight);
+      window.removeEventListener("resize", calculateHeightAndGap);
     };
   }, []);
 
   useEffect(() => {
     if (height === 0) return;
 
-    const finalPosition = -height * 5;
+    const finalPosition = -(height + gap) * 5;
 
     if (controlsRef.current) {
       controlsRef.current.stop();
@@ -74,11 +81,11 @@ function Slide() {
         controlsRef.current.stop();
       }
     };
-  }, [height, yTranslation]);
+  }, [height, gap, yTranslation]);
 
   return (
     <Wrapper>
-      <Boxes style={{ y: yTranslation }}>
+      <Boxes ref={boxesRef} style={{ y: yTranslation }}>
         <SlideBox ref={ref}>1</SlideBox>
         <SlideBox>2</SlideBox>
         <SlideBox>3</SlideBox>

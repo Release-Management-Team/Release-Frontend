@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 
 const Nav = styled.div`
+  height: 90px;
+  @media (max-width: 880px) {
+    height: 70px;
+  }
   position: sticky;
   top: 0;
   background-color: rgba(27, 27, 27, 0.7);
@@ -20,10 +24,16 @@ const Logo = styled.div`
   padding-left: 70px;
   img:nth-child(1) {
     height: 28px;
+    @media (max-width: 880px) {
+      height: 20px;
+    }
   }
   img:nth-child(2) {
     margin-left: 7px;
     height: 14px;
+    @media (max-width: 880px) {
+      height: 10px;
+    }
   }
 `;
 
@@ -82,14 +92,14 @@ function Header() {
     <Nav>
       <Logo>
         <Link to="/">
-          <img src="../img/logo2.png" />
-          <img src="../img/logo3.png" />
+          <img src={`${process.env.PUBLIC_URL}/img/logo2.png`} />
+          <img src={`${process.env.PUBLIC_URL}/img/logo3.png`} />
         </Link>
       </Logo>
       <Contents>
-        <Box>
+        <Content to="/about" active={location.pathname === "/about"}>
           <p>About us</p>
-        </Box>
+        </Content>
         <Content to="/history" active={location.pathname === "/history"}>
           <p>History</p>
         </Content>
