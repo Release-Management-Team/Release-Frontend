@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header";
+import Header from "./Components/Big/Header";
 import Home from "./Routes/Big/Home";
 import Project from "./Routes/Big/Project";
 import History from "./Routes/Big/History";

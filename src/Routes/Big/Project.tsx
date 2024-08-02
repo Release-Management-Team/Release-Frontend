@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
+import Header from "../../Components/Big/Header";
+import Footer from "../../Components/Big/Footer";
 import { motion } from "framer-motion";
 import { useState } from "react";
 

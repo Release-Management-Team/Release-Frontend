@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Header from "../../Components/Header";
+import Header from "../../Components/Big/Header";
 import { motion } from "framer-motion";
-import Logo from "../../Components/Home/Logo";
-import Intro from "../../Components/Home/Intro";
-import AboutRelease from "../../Components/Home/AboutRelease";
-import Activity from "../../Components/Home/Activity";
-import Support from "../../Components/Home/Support";
-import Footer from "../../Components/Footer";
-import Slide from "../../Components/Home/Slide";
+import Logo from "../../Components/Big/Home/Logo";
+import Intro from "../../Components/Big/Home/Intro";
+import AboutRelease from "../../Components/Big/Home/AboutRelease";
+import Activity from "../../Components/Big/Home/Activity";
+import Support from "../../Components/Big/Home/Support";
+import Footer from "../../Components/Big/Footer";
+import Slide from "../../Components/Big/Home/Slide";
 
 const Wrapper = styled.div`
   display: grid;

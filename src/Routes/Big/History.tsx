@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
-import Year2014 from "../../Components/History/Year2014";
-import Year2019 from "../../Components/History/Year2019";
-import Year2023 from "../../Components/History/Year2023";
+import Header from "../../Components/Big/Header";
+import Footer from "../../Components/Big/Footer";
+import Year2014 from "../../Components/Big/History/Year2014";
+import Year2019 from "../../Components/Big/History/Year2019";
+import Year2023 from "../../Components/Big/History/Year2023";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
