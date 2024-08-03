@@ -110,7 +110,9 @@ function SHeader() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p>About us</p>
+            <Content to="/about" active={location.pathname === "/about"}>
+              <p>About</p>
+            </Content>
             <Content to="/history" active={location.pathname === "/history"}>
               <p>History</p>
             </Content>
