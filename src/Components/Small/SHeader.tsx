@@ -67,9 +67,23 @@ const MenuBar = styled(motion.div)`
   color: white;
 `;
 
-const Contents = styled.div``;
+interface ContentProps {
+  active: boolean;
+}
+
+const Content = styled(Link)<ContentProps>`
+  text-align: center;
+  text-decoration: none;
+  color: #d9d9d9;
+  color: ${(props) => (props.active ? "#f6c015" : "#d9d9d9")};
+  p:nth-child(1) {
+    margin: 0;
+    font-size: 22px;
+  }
+`;
 
 function SHeader() {
+  const location = useLocation();
   const [Clicked, setClicked] = useState(false);
   const clickMenu = () => setClicked(!Clicked);
 
@@ -97,8 +111,12 @@ function SHeader() {
             transition={{ duration: 0.3 }}
           >
             <p>About us</p>
-            <p>History</p>
-            <p>Project</p>
+            <Content to="/history" active={location.pathname === "/history"}>
+              <p>History</p>
+            </Content>
+            <Content to="/project" active={location.pathname === "/project"}>
+              <p>Project</p>
+            </Content>
             <p>Members</p>
             <p>지원하기</p>
           </MenuBar>

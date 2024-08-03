@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Boxes = styled(motion.div)`
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 20px;
 `;
 
@@ -60,7 +60,6 @@ function SSlide() {
 
   useEffect(() => {
     if (width === 0) return;
-
     const finalPosition = -(width + gap) * 5;
 
     if (controlsRef.current) {
@@ -85,7 +84,8 @@ function SSlide() {
   return (
     <Wrapper>
       <Boxes ref={boxesRef} style={{ x: xTranslation }}>
-        <SlideBox ref={ref}>2</SlideBox>
+        <SlideBox ref={ref}>1</SlideBox>
+        <SlideBox>2</SlideBox>
         <SlideBox>3</SlideBox>
         <SlideBox>4</SlideBox>
         <SlideBox>5</SlideBox>
@@ -94,7 +94,6 @@ function SSlide() {
         <SlideBox>3</SlideBox>
         <SlideBox>4</SlideBox>
         <SlideBox>5</SlideBox>
-        <SlideBox>1</SlideBox>
       </Boxes>
     </Wrapper>
   );
