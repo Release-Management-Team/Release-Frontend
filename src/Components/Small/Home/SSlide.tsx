@@ -3,11 +3,12 @@ import {
   motion,
   useMotionValue,
   AnimationPlaybackControls,
+  useViewportScroll,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   overflow: hidden;
   width: 100%;
 `;

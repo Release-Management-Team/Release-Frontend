@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled(motion.div)`
@@ -31,7 +31,7 @@ const Text = styled.div`
   }
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -62,31 +62,20 @@ const BlankBase = styled.div`
   border-radius: 30px;
 `;
 
-const Blank = motion(BlankBase);
-
-const imageVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut" } },
-};
-
-const wrapperVariants = {
-  hover: {
-    transition: { staggerChildren: 0.3 },
-    opacity: 1,
-  },
-};
-
 function SAboutRelease() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.17) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
 
   return (
-    <Wrapper
-      variants={wrapperVariants}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(true)}
-      initial="hidden"
-      animate={isHovered ? "hover" : "hidden"}
-    >
+    <Wrapper>
       <Text>
         <p>Release를 소개합니다</p>
         <p>Release는 2014년에 창립된</p>
@@ -96,14 +85,20 @@ function SAboutRelease() {
         <p>전공을 불문하고 프로젝트를 하고 싶은 열정이 있는 사람,</p>
         <p> 능력이 있는 사람을 모집 중입니다.</p>
       </Text>
-      <Container>
-        <Images>
-          <BlankBase />
-          <BlankBase />
-          <BlankBase />
-          <BlankBase />
-        </Images>
-      </Container>
+      {isVisible1 && (
+        <Container
+          initial={{ opacity: 0, scale: 1, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Images>
+            <BlankBase />
+            <BlankBase />
+            <BlankBase />
+            <BlankBase />
+          </Images>
+        </Container>
+      )}
     </Wrapper>
   );
 }

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -45,40 +46,34 @@ const ImageBase = styled.div`
 
 const Image = motion(ImageBase);
 
-const imageVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut" } },
-};
-
-const wrapperVariants = {
-  hover: {
-    transition: { staggerChildren: 0.3 },
-    opacity: 1,
-  },
-};
-
 function SSupport() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.85) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
-    <Wrapper
-      variants={wrapperVariants}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(true)}
-      initial="hidden"
-      animate={isHovered ? "hover" : "hidden"}
-    >
+    <Wrapper>
       <Text>
         <p>제휴 및 후원</p>
         <p>Release와 함께하는 기업들입니다.</p>
       </Text>
-      <Image
-        variants={imageVariants}
-        initial="hidden"
-        animate={isHovered ? "visible" : "hidden"}
-      >
-        <img src={`${process.env.PUBLIC_URL}/img/naver.png`} />
-        <img src={`${process.env.PUBLIC_URL}/img/mobis.png`} />
-      </Image>
+      {isVisible1 && (
+        <Image
+          initial={{ opacity: 0, scale: 1, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <img src={`${process.env.PUBLIC_URL}/img/naver.png`} />
+          <img src={`${process.env.PUBLIC_URL}/img/mobis.png`} />
+        </Image>
+      )}
     </Wrapper>
   );
 }

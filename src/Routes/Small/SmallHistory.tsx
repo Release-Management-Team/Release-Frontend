@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
 import SHeader from "../../Components/Small/SHeader";
 import SFooter from "../../Components/Small/SFooter";
 import SYear2014 from "../../Components/Small/History/SYear2014";
 import SYear2019 from "../../Components/Small/History/SYear2019";
 import SYear2023 from "../../Components/Small/History/Syear2023";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: grid;
@@ -96,6 +97,17 @@ const Button = styled(motion.button)`
 `;
 
 function SmallHistory() {
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.9) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
     <Wrapper>
       <SHeader />
@@ -117,9 +129,15 @@ function SmallHistory() {
       <Waiting>
         <p>Waiting for You!</p>
         <p>Release는 당신의 잠재력을 기다리고 있습니다!</p>
-        <Button>
-          <p>지원하기</p>
-        </Button>
+        {isVisible1 && (
+          <Button
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <p>지원하기</p>
+          </Button>
+        )}
       </Waiting>
       <SFooter />
     </Wrapper>

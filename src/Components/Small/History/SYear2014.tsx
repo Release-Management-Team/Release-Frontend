@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const First = styled(motion.div)`
@@ -62,7 +62,11 @@ const FourTeen = styled(motion.div)`
     font-size: 4vw;
     margin-bottom: 2.7vw;
   }
-  p:nth-child(n + 2) {
+`;
+
+const Detail = styled(motion.div)`
+  p:nth-child(n + 1) {
+    text-align: end;
     color: #d9d9d9;
     font-size: 2.4vw;
     font-weight: 400;
@@ -78,20 +82,18 @@ const ImageOne = styled(motion.div)`
   border-radius: 20px;
 `;
 
-const appearVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut" } },
-};
-
-const wrapperVariants = {
-  hover: {
-    transition: { staggerChildren: 0.3 },
-    opacity: 1,
-  },
-};
-
 function SYear2014() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.12) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
     <First>
       <BoxOne />
@@ -103,10 +105,24 @@ function SYear2014() {
       <ContentZone>
         <FourTeen>
           <p>Release 창립</p>
-          <p>2014년 3월,</p>
-          <p>서강대학교 컴퓨터공학과</p>
-          <p>프로젝트 학회 Release가 창립되었습니다.</p>
-          <ImageOne />
+          {isVisible1 && (
+            <Detail
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <p>2014년 3월,</p>
+              <p>서강대학교 컴퓨터공학과</p>
+              <p>프로젝트 학회 Release가 창립되었습니다.</p>
+            </Detail>
+          )}
+          {isVisible1 && (
+            <ImageOne
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            />
+          )}
         </FourTeen>
       </ContentZone>
     </First>

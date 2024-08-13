@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
 import SHeader from "../../Components/Small/SHeader";
 import SLogo from "../../Components/Small/Home/SLogo";
 import SIntro from "../../Components/Small/Home/SIntro";
@@ -8,6 +8,7 @@ import SActivity from "../../Components/Small/Home/SActivity";
 import SSlide from "../../Components/Small/Home/SSlide";
 import SSupport from "../../Components/Small/Home/SSupport";
 import SFooter from "../../Components/Small/SFooter";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: grid;
