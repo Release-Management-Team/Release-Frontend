@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const First = styled(motion.div)`
@@ -35,6 +35,7 @@ const TextZone = styled.div`
 
 const FourTeen = styled(motion.div)`
   position: absolute;
+  width: 20vw;
   top: 65px;
   right: calc(10%);
   p:nth-child(1) {
@@ -100,31 +101,40 @@ const wrapperVariants = {
 
 function Year2014() {
   const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.12) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
-    <First
-      variants={wrapperVariants}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(true)}
-      initial="hidden"
-      animate={isHovered ? "hover" : "hidden"}
-    >
+    <First>
       <TextZone>
         <FourTeen>
           <p>Release 창립</p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            2014년 3월 서강대학교 컴퓨터공학과
-          </motion.p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            프로젝트 학회 Release가 창립되었습니다.
-          </motion.p>
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              2014년 3월 서강대학교 컴퓨터공학과
+            </motion.p>
+          )}
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              프로젝트 학회 Release가 창립되었습니다.
+            </motion.p>
+          )}
         </FourTeen>
       </TextZone>
       <ForLine1>
@@ -134,11 +144,13 @@ function Year2014() {
         <Dot />
       </ForLine2>
       <ImageZone>
-        <ImageBox
-          variants={appearVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        ></ImageBox>
+        {isVisible1 && (
+          <ImageBox
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          ></ImageBox>
+        )}
       </ImageZone>
     </First>
   );

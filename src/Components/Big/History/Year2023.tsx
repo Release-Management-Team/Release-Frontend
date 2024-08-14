@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const First = styled(motion.div)`
   width: 100%;
@@ -35,6 +35,7 @@ const TextZone = styled.div`
 
 const TwentyThree = styled(motion.div)`
   position: absolute;
+  width: 20vw;
   top: 65px;
   right: calc(17%);
   p:nth-child(1) {
@@ -99,32 +100,40 @@ const wrapperVariants = {
 };
 
 function Year2023() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.6) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
-    <First
-      variants={wrapperVariants}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(true)}
-      initial="hidden"
-      animate={isHovered ? "hover" : "hidden"}
-    >
+    <First>
       <TextZone>
         <TwentyThree>
           <p>00 제휴</p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            2023년 9월,
-          </motion.p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            Release가 기업 00과 제휴하였습니다.
-          </motion.p>
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              2023년 9월,
+            </motion.p>
+          )}
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              Release가 기업 00과 제휴하였습니다.
+            </motion.p>
+          )}
         </TwentyThree>
       </TextZone>
       <ForLine1>
@@ -134,11 +143,13 @@ function Year2023() {
         <Dot />
       </ForLine2>
       <ImageZone>
-        <ImageBox
-          variants={appearVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        ></ImageBox>
+        {isVisible1 && (
+          <ImageBox
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          ></ImageBox>
+        )}
       </ImageZone>
     </First>
   );

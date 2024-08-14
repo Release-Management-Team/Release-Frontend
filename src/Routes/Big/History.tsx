@@ -4,8 +4,8 @@ import Footer from "../../Components/Big/Footer";
 import Year2014 from "../../Components/Big/History/Year2014";
 import Year2019 from "../../Components/Big/History/Year2019";
 import Year2023 from "../../Components/Big/History/Year2023";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: grid;
@@ -146,7 +146,17 @@ const wrapperVariants = {
 };
 
 function History() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.85) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
     <Wrapper>
       <Header />
@@ -170,22 +180,18 @@ function History() {
           </Box11>
           <Box22 />
         </LongLine>
-        <Waiting
-          variants={wrapperVariants}
-          onHoverStart={() => setIsHovered(true)}
-          onHoverEnd={() => setIsHovered(true)}
-          initial="hidden"
-          animate={isHovered ? "hover" : "hidden"}
-        >
+        <Waiting>
           <p>Waiting for You!</p>
           <p>Release는 당신의 잠재력을 기다리고 있습니다!</p>
-          <Button
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            <p>지원하기</p>
-          </Button>
+          {isVisible1 && (
+            <Button
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <p>지원하기</p>
+            </Button>
+          )}
         </Waiting>
       </Banner>
       <Footer />

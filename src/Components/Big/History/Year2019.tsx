@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const First = styled(motion.div)`
@@ -36,6 +36,7 @@ const TextZone = styled.div`
 
 const NineTeen = styled(motion.div)`
   position: absolute;
+  width: 20vw;
   top: 65px;
   left: calc(17%);
   text-align: end;
@@ -105,21 +106,27 @@ const wrapperVariants = {
 };
 
 function Year2019() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.3) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
-    <First
-      variants={wrapperVariants}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(true)}
-      initial="hidden"
-      animate={isHovered ? "hover" : "hidden"}
-    >
+    <First>
       <ImageZone>
-        <ImageBox
-          variants={appearVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        />
+        {isVisible1 && (
+          <ImageBox
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        )}
       </ImageZone>
       <ForLine1>
         <Year>2019</Year>
@@ -131,27 +138,33 @@ function Year2019() {
         <NineTeen>
           <p>00팀 00대회</p>
           <p>00상 수상</p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            2019년 6월
-          </motion.p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            Release 소속 프로젝트 팀 00팀이
-          </motion.p>
-          <motion.p
-            variants={appearVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-          >
-            00대회에서 00상을 수상하였습니다.
-          </motion.p>
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              2019년 6월
+            </motion.p>
+          )}
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              Release 소속 프로젝트 팀 00팀이
+            </motion.p>
+          )}
+          {isVisible1 && (
+            <motion.p
+              initial={{ opacity: 0, scale: 1, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              00대회에서 00상을 수상하였습니다.
+            </motion.p>
+          )}
         </NineTeen>
       </TextZone>
     </First>

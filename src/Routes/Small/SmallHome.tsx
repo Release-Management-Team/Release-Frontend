@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 70px 500px 950px 650px 450px 200px;
   @media (max-width: 450px) {
-    grid-template-rows: 70px 350px 600px 450px 300px 150px;
+    grid-template-rows: 70px 350px 600px 450px 300px 180px;
   }
   background: radial-gradient(
     circle at 50% 300px,

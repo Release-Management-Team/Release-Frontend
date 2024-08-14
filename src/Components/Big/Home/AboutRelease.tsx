@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled(motion.div)`
@@ -19,7 +19,7 @@ const Wrapper = styled(motion.div)`
   }
 `;
 
-const Images = styled.div`
+const Images = styled(motion.div)`
   width: 70vw;
   height: 350px;
   display: grid;
@@ -67,16 +67,19 @@ const wrapperVariants = {
 };
 
 function AboutRelease() {
-  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      if (latest >= 0.3) {
+        setIsVisible1(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
 
   return (
-    <Wrapper
-      variants={wrapperVariants}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(true)}
-      initial="hidden"
-      animate={isHovered ? "hover" : "hidden"}
-    >
+    <Wrapper>
       <p>Release를 소개합니다</p>
       <p>
         Release는 2014년에 창립된 서강대학교 컴퓨터공학과 유일의 프로젝트
@@ -88,26 +91,35 @@ function AboutRelease() {
         사람을 모집 중입니다.
       </p>
       <Images>
-        <Blank
-          variants={imageVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        />
-        <Blank
-          variants={imageVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        />
-        <Blank
-          variants={imageVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        />
-        <Blank
-          variants={imageVariants}
-          initial="hidden"
-          animate={isHovered ? "visible" : "hidden"}
-        />
+        {isVisible1 && (
+          <Blank
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        )}
+
+        {isVisible1 && (
+          <Blank
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        )}
+        {isVisible1 && (
+          <Blank
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        )}
+        {isVisible1 && (
+          <Blank
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        )}
       </Images>
     </Wrapper>
   );

@@ -32,6 +32,7 @@ const Text = styled.div`
 
 const ImageBase = styled.div`
   margin-top: 70px;
+  height: 100px;
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -64,16 +65,24 @@ function SSupport() {
         <p>제휴 및 후원</p>
         <p>Release와 함께하는 기업들입니다.</p>
       </Text>
-      {isVisible1 && (
-        <Image
-          initial={{ opacity: 0, scale: 1, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <img src={`${process.env.PUBLIC_URL}/img/naver.png`} />
-          <img src={`${process.env.PUBLIC_URL}/img/mobis.png`} />
-        </Image>
-      )}
+      <Image>
+        {isVisible1 && (
+          <motion.img
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            src={`${process.env.PUBLIC_URL}/img/naver.png`}
+          />
+        )}
+        {isVisible1 && (
+          <motion.img
+            initial={{ opacity: 0, scale: 1, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            src={`${process.env.PUBLIC_URL}/img/mobis.png`}
+          />
+        )}
+      </Image>
     </Wrapper>
   );
 }

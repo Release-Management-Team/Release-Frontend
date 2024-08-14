@@ -58,7 +58,7 @@ function Footer() {
     <Wrapper>
       <Container>
         <FirstInfo>
-          <img src={`${process.env.PUBLIC_URL}/img/logo3.png`} />
+          <img src={`${process.env.PUBLIC_URL}/img/logo4.png`} />
           <PlusInfo>
             <p>서강대학교 컴퓨터공학과 프로젝트 학회</p>
             <Phone>

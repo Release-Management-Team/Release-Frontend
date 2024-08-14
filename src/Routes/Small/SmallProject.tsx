@@ -12,10 +12,10 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 70px 250px 1200px 50px 200px;
   @media (max-width: 550px) {
-    grid-template-rows: 70px 200px 1000px 30px 150px;
+    grid-template-rows: 70px 200px 1000px 40px 200px;
   }
   @media (max-width: 460px) {
-    grid-template-rows: 70px 170px 800px 20px 150px;
+    grid-template-rows: 70px 170px 800px 20px 180px;
   }
   background: radial-gradient(
     circle at 50% 300px,
@@ -50,7 +50,6 @@ const Projects = styled.div`
   align-items: center;
   gap: 1.7vw;
   justify-content: center;
-  margin-bottom: 20px;
 `;
 
 const ProjectBox = styled(motion.div)`
