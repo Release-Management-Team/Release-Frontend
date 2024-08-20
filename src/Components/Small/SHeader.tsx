@@ -158,7 +158,6 @@ function SHeader() {
             <Content to="/project" active={location.pathname === "/project"}>
               <p>Project</p>
             </Content>
-            <Click>Members</Click>
             <Button>
               <p>지원하기</p>
             </Button>

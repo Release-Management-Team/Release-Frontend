@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
   	display: block;
   }
-  body, button {
+  body, button, textarea, input {
     margin: 0;
     font-family: "pretendard", sans-serif;
     font-weight: 600;

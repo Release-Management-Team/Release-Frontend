@@ -12,7 +12,7 @@ const Nav = styled.div`
   backdrop-filter: blur(5px);
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 7fr 4fr;
   padding: 10px;
   box-sizing: border-box;
 `;
@@ -70,7 +70,7 @@ const Box = styled.div`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(Link)<ContentProps>`
   width: 8.5vw;
   height: 3.2vw;
   background-color: #f6c015;
@@ -79,6 +79,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 1.3vw;
@@ -106,10 +107,7 @@ function Header() {
         <Content to="/project" active={location.pathname === "/project"}>
           <p>Project</p>
         </Content>
-        <Box>
-          <p>Members</p>
-        </Box>
-        <Button>
+        <Button to="/apply" active={location.pathname === "/apply"}>
           <p>지원하기</p>
         </Button>
       </Contents>

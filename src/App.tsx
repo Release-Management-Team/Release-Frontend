@@ -10,6 +10,9 @@ import SmallProject from "./Routes/Small/SmallProject";
 import SmallHistory from "./Routes/Small/SmallHistory";
 import About from "./Routes/Big/About";
 import SmallAbout from "./Routes/Small/SmallAbout";
+import Apply from "./Routes/Big/Apply";
+import SmallApply from "./Routes/Small/SmallApply";
+import SuccessPage from "./Components/Big/Apply/SuccessPage";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 730px)" });
@@ -17,12 +20,16 @@ function App() {
   const SelectAbout = isBigScreen ? About : SmallAbout;
   const SelectHistory = isBigScreen ? History : SmallHistory;
   const SelectProject = isBigScreen ? Project : SmallProject;
+  const SelectApply = isBigScreen ? Apply : SmallApply;
+
   return (
     <HashRouter>
       <Routes>
         <Route path="about" element={<SelectAbout />}></Route>
         <Route path="history" element={<SelectHistory />}></Route>
         <Route path="project" element={<SelectProject />}></Route>
+        <Route path="apply" element={<SelectApply />}></Route>
+        <Route path="apply/success" element={<SuccessPage />} />
         <Route path="/" element={<SelectHome />}></Route>
       </Routes>
     </HashRouter>
