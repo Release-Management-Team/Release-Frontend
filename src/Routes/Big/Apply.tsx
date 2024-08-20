@@ -11,6 +11,14 @@ const Wrapper = styled.div`
     #303030,
     rgb(27, 27, 27) 40%
   );
+  @media (max-width: 800px) {
+    grid-template-rows: 70px 800px 250px;
+    background: radial-gradient(
+      circle at 28% 400px,
+      #303030,
+      rgb(27, 27, 27) 40%
+    );
+  }
 `;
 
 const Container = styled.div`

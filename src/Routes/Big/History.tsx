@@ -6,6 +6,7 @@ import Year2019 from "../../Components/Big/History/Year2019";
 import Year2023 from "../../Components/Big/History/Year2023";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: grid;
@@ -117,7 +118,7 @@ const Waiting = styled(motion.div)`
   }
 `;
 
-const Button = styled(motion.button)`
+const Button = styled(motion(Link))`
   width: 10.5vw;
   height: 3.5vw;
   background-color: #f6c015;
@@ -126,6 +127,7 @@ const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 1.3vw;
@@ -185,6 +187,7 @@ function History() {
           <p>Release는 당신의 잠재력을 기다리고 있습니다!</p>
           {isVisible1 && (
             <Button
+              to="/apply"
               initial={{ opacity: 0, scale: 1, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.4 }}

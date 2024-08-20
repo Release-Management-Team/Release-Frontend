@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -29,7 +30,7 @@ const Text = styled(motion.div)`
   }
 `;
 
-const Button = styled(motion.button)`
+const Button = styled(motion(Link))`
   width: 10.5vw;
   height: 3.5vw;
   background-color: #f6c015;
@@ -40,6 +41,7 @@ const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 1.3vw;
@@ -121,7 +123,7 @@ function Intro() {
           src={`${process.env.PUBLIC_URL}/img/logo3.png`}
         />
       </Text>
-      <Button variants={btnMotion} initial="start" animate="end">
+      <Button to="/apply" variants={btnMotion} initial="start" animate="end">
         <p>지원하기</p>
       </Button>
     </Wrapper>

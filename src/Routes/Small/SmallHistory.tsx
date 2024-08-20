@@ -6,6 +6,7 @@ import SYear2014 from "../../Components/Small/History/SYear2014";
 import SYear2019 from "../../Components/Small/History/SYear2019";
 import SYear2023 from "../../Components/Small/History/Syear2023";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: grid;
@@ -80,7 +81,7 @@ const Waiting = styled.div`
   }
 `;
 
-const Button = styled(motion.button)`
+const Button = styled(motion(Link))`
   width: 16vw;
   height: 6vw;
   background-color: #f6c015;
@@ -89,6 +90,7 @@ const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 2vw;
@@ -131,6 +133,7 @@ function SmallHistory() {
         <p>Release는 당신의 잠재력을 기다리고 있습니다!</p>
         {isVisible1 && (
           <Button
+            to="/apply"
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}

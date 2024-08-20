@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 interface FormData {
   name: string;
@@ -14,15 +14,8 @@ interface FormData {
   absence: string;
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-`;
-
 const ContentBox = styled.div`
-  width: 95%;
-  height: 700px;
+  width: 100%;
   border-radius: 20px;
   margin-top: 3.5vw;
   background-color: #292929;
@@ -53,7 +46,13 @@ const ApplyLabel = styled.label`
   flex-direction: column;
   p:nth-child(1) {
     color: #d9d9d9;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin-bottom: 1.1vw;
+  }
+  p:nth-child(2) {
+    color: #d9d9d9;
+    font-size: 1.5vw;
     font-weight: 400;
     margin-bottom: 1.1vw;
   }
@@ -62,11 +61,11 @@ const ApplyLabel = styled.label`
 
 const InputBox1 = styled.input`
   width: 18vw;
-  height: 36px;
+  height: 3vw;
   background: transparent;
   color: white;
   padding-left: 4.5px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-weight: 400;
   border: none;
   border-bottom: 0.5px solid white;
@@ -74,7 +73,7 @@ const InputBox1 = styled.input`
   margin-bottom: 1.8vw;
   &::placeholder {
     color: #999999;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     font-weight: 400;
   }
   &:-webkit-autofill,
@@ -89,11 +88,11 @@ const InputBox1 = styled.input`
 
 const InputBox2 = styled.input`
   width: 24vw;
-  height: 36px;
+  height: 3vw;
   background: transparent;
   color: white;
   padding-left: 4.5px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-weight: 400;
   border: none;
   border-bottom: 0.5px solid white;
@@ -101,7 +100,7 @@ const InputBox2 = styled.input`
   margin-bottom: 1.8vw;
   &::placeholder {
     color: #999999;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     font-weight: 400;
   }
   &:-webkit-autofill,
@@ -116,12 +115,12 @@ const InputBox2 = styled.input`
 
 const InputBox3 = styled.textarea`
   width: 34vw;
-  height: 180px;
+  height: 12vw;
   resize: none;
   background: transparent;
   color: white;
   padding-left: 4.5px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-weight: 400;
   border: none;
   border-bottom: 0.5px solid white;
@@ -129,7 +128,7 @@ const InputBox3 = styled.textarea`
   margin-bottom: 1.8vw;
   &::placeholder {
     color: #999999;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     font-weight: 400;
   }
   &:-webkit-autofill,
@@ -212,18 +211,19 @@ const NoLabel = styled.label`
 
 const InputBox4 = styled.input`
   width: 24vw;
-  height: 36px;
+  height: 3vw;
   background: transparent;
   color: white;
   padding-left: 4.5px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-weight: 400;
   border: none;
   border-bottom: 0.5px solid white;
   outline: none;
+  margin-top: 1vw;
   &::placeholder {
     color: #999999;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     font-weight: 400;
   }
   &:-webkit-autofill,
@@ -256,7 +256,7 @@ const Button = styled.button`
 
 const ErrorMessage = styled.span`
   color: red;
-  font-size: 1vw;
+  font-size: 1.4vw;
   font-weight: 400;
 `;
 
@@ -267,7 +267,7 @@ const SubmitZone = styled.div`
   gap: 3vw;
 `;
 
-function Applying() {
+function SApplying() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -347,125 +347,122 @@ function Applying() {
   const handleAbsence2 = () => {
     setAbsence(false);
   };
-
   return (
-    <Wrapper>
-      <ContentBox>
-        <ApplyForm onSubmit={handleSubmit}>
-          <ApplyLabel>
-            <p>이름</p>
-            <InputBox1
+    <ContentBox>
+      {" "}
+      <ApplyForm onSubmit={handleSubmit}>
+        <ApplyLabel>
+          <p>이름</p>
+          <InputBox1
+            type="text"
+            name="name"
+            placeholder="이름을 입력하세요."
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>학번</p>
+          <InputBox1
+            type="text"
+            name="snumber"
+            placeholder="학번 8자리를 입력하세요."
+            value={formData.snumber}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>학과</p>
+          <InputBox2
+            type="text"
+            name="major"
+            placeholder="소속 학과를 입력하세요."
+            value={formData.major}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>연락처 (전화번호)</p>
+          <InputBox2
+            type="text"
+            name="number"
+            placeholder="연락처를 입력하세요."
+            value={formData.number}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>간단하게 자기소개를 해주세요.</p>
+          <InputBox3
+            name="about"
+            placeholder="내용을 입력하세요."
+            value={formData.about}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>프로그래밍을 해 본 경험이나 프로젝트에 참여한</p>
+          <p> 경험이 있다면 소개해 주세요.</p>
+          <InputBox3
+            name="experience"
+            placeholder="내용을 입력하세요."
+            value={formData.experience}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>릴리즈에서 어떠한 활동을 하고 싶은지</p>
+          <p>간단히 작성해 주세요.</p>
+          <InputBox3
+            name="additionalInfo"
+            placeholder="내용을 입력하세요."
+            value={formData.additionalInfo}
+            onChange={handleChange}
+          />
+        </ApplyLabel>
+        <ApplyLabel>
+          <p>개강총회가 있습니다. 참여 가능하신가요?</p>
+          <YesLabel>
+            <input
+              type="radio"
+              name="participation"
+              value="yes"
+              checked={formData.attendance === "yes"}
+              onChange={handleChange1}
+              onClick={handleAbsence2}
+            />
+            <span>가능</span>
+          </YesLabel>
+          <NoLabel>
+            <input
+              type="radio"
+              name="participation"
+              value="no"
+              checked={formData.attendance === "no"}
+              onChange={handleChange1}
+              onClick={handleAbsence1}
+            />
+            <span>불가능</span>
+          </NoLabel>
+          {absence && (
+            <InputBox4
               type="text"
-              name="name"
-              placeholder="이름을 입력하세요."
-              value={formData.name}
+              name="absence"
+              placeholder="사유가 있다면 기재 바랍니다."
+              value={formData.absence}
               onChange={handleChange}
             />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>학번</p>
-            <InputBox1
-              type="text"
-              name="snumber"
-              placeholder="학번 8자리를 입력하세요."
-              value={formData.snumber}
-              onChange={handleChange}
-            />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>학과</p>
-            <InputBox2
-              type="text"
-              name="major"
-              placeholder="소속 학과를 입력하세요."
-              value={formData.major}
-              onChange={handleChange}
-            />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>연락처 (전화번호)</p>
-            <InputBox2
-              type="text"
-              name="number"
-              placeholder="연락처를 입력하세요."
-              value={formData.number}
-              onChange={handleChange}
-            />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>간단하게 자기소개를 해주세요.</p>
-            <InputBox3
-              name="about"
-              placeholder="내용을 입력하세요."
-              value={formData.about}
-              onChange={handleChange}
-            />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>
-              프로그래밍을 해 본 경험이나 프로젝트에 참여한 경험이 있다면 소개해
-              주세요.
-            </p>
-            <InputBox3
-              name="experience"
-              placeholder="내용을 입력하세요."
-              value={formData.experience}
-              onChange={handleChange}
-            />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>릴리즈에서 어떠한 활동을 하고 싶은지 간단히 작성해 주세요.</p>
-            <InputBox3
-              name="additionalInfo"
-              placeholder="내용을 입력하세요."
-              value={formData.additionalInfo}
-              onChange={handleChange}
-            />
-          </ApplyLabel>
-          <ApplyLabel>
-            <p>개강총회가 있습니다. 참여 가능하신가요?</p>
-            <YesLabel>
-              <input
-                type="radio"
-                name="participation"
-                value="yes"
-                checked={formData.attendance === "yes"}
-                onChange={handleChange1}
-                onClick={handleAbsence2}
-              />
-              <span>가능</span>
-            </YesLabel>
-            <NoLabel>
-              <input
-                type="radio"
-                name="participation"
-                value="no"
-                checked={formData.attendance === "no"}
-                onChange={handleChange1}
-                onClick={handleAbsence1}
-              />
-              <span>불가능</span>
-              {absence && (
-                <InputBox4
-                  type="text"
-                  name="absence"
-                  placeholder="사유가 있다면 기재 바랍니다."
-                  value={formData.absence}
-                  onChange={handleChange}
-                />
-              )}
-            </NoLabel>
-          </ApplyLabel>
-          <SubmitZone>
-            <Button type="submit">
-              <p>지원하기</p>
-            </Button>
-            {error && <ErrorMessage>{error}</ErrorMessage>}
-          </SubmitZone>
-        </ApplyForm>
-      </ContentBox>
-    </Wrapper>
+          )}
+        </ApplyLabel>
+        <SubmitZone>
+          <Button type="submit">
+            <p>지원하기</p>
+          </Button>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+        </SubmitZone>
+      </ApplyForm>
+    </ContentBox>
   );
 }
 
-export default Applying;
+export default SApplying;

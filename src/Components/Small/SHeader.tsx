@@ -96,7 +96,7 @@ const Click = styled.div`
   color: #d9d9d9;
 `;
 
-const Button = styled(motion.button)`
+const Button = styled(Link)`
   width: 16vw;
   height: 6vw;
   background: transparent;
@@ -105,6 +105,7 @@ const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 2vw;
@@ -158,7 +159,7 @@ function SHeader() {
             <Content to="/project" active={location.pathname === "/project"}>
               <p>Project</p>
             </Content>
-            <Button>
+            <Button to="/apply">
               <p>지원하기</p>
             </Button>
           </MenuBar>
