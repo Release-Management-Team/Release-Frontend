@@ -320,7 +320,7 @@ function Applying() {
     }
     try {
       const response = await fetch(
-        "http://localhost:3000/api/conference-apply",
+        "http://jinnysoo.iptime.org:8000",
         {
           method: "POST",
           headers: {

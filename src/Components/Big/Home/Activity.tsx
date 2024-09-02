@@ -30,7 +30,10 @@ function Activity() {
       <First>
         <Text>
           <p>Release의 다양한 활동</p>
-          <p>Release에서는 정기적으로 스터디, 세미나, 프로젝트 등의</p>
+          <p>
+            Release에서는 스터디, 세미나, 프로젝트, 그리고 여러 가지 친목 활동
+            등
+          </p>
           <p>다양한 활동들을 진행하고 있습니다.</p>
         </Text>
       </First>

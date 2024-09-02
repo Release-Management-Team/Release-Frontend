@@ -59,8 +59,7 @@ const SuccessPage = () => {
       <Header />
       <Container>
         <img src={`${process.env.PUBLIC_URL}/img/logo2.png`} />
-        <p>지원해주셔서 감사합니다!</p>
-        <p>1차 서류 결과</p>
+        <p>지금은 지원 기간이 아닙니다.</p>
         <Button to="/">
           <p>홈으로 돌아가기</p>
         </Button>

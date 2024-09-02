@@ -30,8 +30,7 @@ function App() {
         <Route path="about" element={<SelectAbout />}></Route>
         <Route path="history" element={<SelectHistory />}></Route>
         <Route path="project" element={<SelectProject />}></Route>
-        <Route path="apply" element={<SelectApply />}></Route>
-        <Route path="apply/success" element={<SelectSuccess />} />
+        <Route path="apply" element={<SelectSuccess />}></Route>
         <Route path="/" element={<SelectHome />}></Route>
       </Routes>
     </HashRouter>

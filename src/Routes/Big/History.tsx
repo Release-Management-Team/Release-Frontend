@@ -1,19 +1,27 @@
 import styled from "styled-components";
 import Header from "../../Components/Big/Header";
 import Footer from "../../Components/Big/Footer";
-import Year2014 from "../../Components/Big/History/Year2014";
-import Year2019 from "../../Components/Big/History/Year2019";
-import Year2023 from "../../Components/Big/History/Year2023";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Year201401 from "../../Components/Big/History/Year201401";
+import Year201507 from "../../Components/Big/History/Year201507";
+import Year201510 from "../../Components/Big/History/Year201510";
+import Year201511 from "../../Components/Big/History/Year201511";
+import Year201607 from "../../Components/Big/History/Year201607";
+import Year201609 from "../../Components/Big/History/Year201609";
+import Year201706 from "../../Components/Big/History/Year201706";
+import Year201806 from "../../Components/Big/History/Year201806";
+import Year201808 from "../../Components/Big/History/Year201808";
+import Year202308 from "../../Components/Big/History/Year202308";
+import Year202402 from "../../Components/Big/History/Year202402";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 90px 2300px 330px;
+  grid-template-rows: 90px 5700px 330px;
   background-color: #1c1c1c;
   @media (max-width: 880px) {
-    grid-template-rows: 70px 1600px 250px;
+    grid-template-rows: 70px 4000px 250px;
   }
 `;
 
@@ -173,9 +181,17 @@ function History() {
           <Box1 />
           <Box2 />
         </ShortLine>
-        <Year2014 />
-        <Year2019 />
-        <Year2023 />
+        <Year201401 />
+        <Year201507 />
+        <Year201510 />
+        <Year201511 />
+        <Year201607 />
+        <Year201609 />
+        <Year201706 />
+        <Year201806 />
+        <Year201808 />
+        <Year202308 />
+        <Year202402 />
         <LongLine>
           <Box11>
             <Dot />
