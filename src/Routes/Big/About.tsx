@@ -32,7 +32,7 @@ const Back = styled.div`
 `;
 
 const Banner = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/img/bg1.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/cs13.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -94,7 +94,7 @@ const ImageZone1 = styled.div`
 `;
 
 const Image1 = styled(motion.div)`
-  background-image: url(${process.env.PUBLIC_URL}/img/bg2.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/cs10.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -157,7 +157,7 @@ const ImageZone2 = styled(motion.div)`
   @media (max-width: 880px) {
     height: 615px;
   }
-  background-image: url(${process.env.PUBLIC_URL}/img/bg3.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/cs12.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

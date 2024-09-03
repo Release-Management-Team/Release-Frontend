@@ -160,7 +160,7 @@ function History() {
   const [isVisible1, setIsVisible1] = useState(false);
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.85) {
+      if (latest >= 0.93) {
         setIsVisible1(true);
       }
     });

@@ -80,6 +80,10 @@ const ImageOne = styled(motion.div)`
   width: 60vw;
   height: 25vw;
   border-radius: 20px;
+  background-image: url(${process.env.PUBLIC_URL}/img/cs8.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const appearVariants = {
@@ -94,12 +98,12 @@ const wrapperVariants = {
   },
 };
 
-function SYear2023() {
+function SYear201706() {
   const { scrollYProgress } = useViewportScroll();
   const [isVisible1, setIsVisible1] = useState(false);
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.6) {
+      if (latest >= 0.52) {
         setIsVisible1(true);
       }
     });
@@ -111,21 +115,20 @@ function SYear2023() {
       <BoxOne />
       <YearZone>
         <Dot />
-        <Year>2014</Year>
+        <Year>2017.06</Year>
       </YearZone>
       <BoxTwo />
       <ContentZone>
         <FourTeen>
-          <p>Release 창립</p>
+          <p>MS 해커톤, AI Winter</p>
           {isVisible1 && (
             <Detail
               initial={{ opacity: 0, scale: 1, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <p>2014년 3월,</p>
-              <p>서강대학교 컴퓨터공학과</p>
-              <p>프로젝트 학회 Release가 창립되었습니다.</p>
+              <p>2017년 6월,</p>
+              <p>MS 해커톤, AI Winter 참가</p>
             </Detail>
           )}
           {isVisible1 && (
@@ -141,4 +144,4 @@ function SYear2023() {
   );
 }
 
-export default SYear2023;
+export default SYear201706;

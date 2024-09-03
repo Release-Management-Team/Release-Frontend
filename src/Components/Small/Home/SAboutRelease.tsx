@@ -77,13 +77,13 @@ function SAboutRelease() {
   return (
     <Wrapper>
       <Text>
-        <p>Release를 소개합니다</p>
+        <p>컴공까지 왔으면 하고 싶은 걸 해야지!</p>
         <p>Release는 2014년에 창립된</p>
         <p>서강대학교 컴퓨터공학과 유일의 프로젝트 학회로,</p>
         <p>다양한 사람들이 모여</p>
         <p>함께 프로젝트를 하기 위해 설립된 학회입니다.</p>
-        <p>전공을 불문하고 프로젝트를 하고 싶은 열정이 있는 사람,</p>
-        <p> 능력이 있는 사람을 모집 중입니다.</p>
+        <p>프로젝트를 하고 싶은 열정이 있는 사람,</p>
+        <p>능력이 있는 사람을 모집 중입니다.</p>
       </Text>
       {isVisible1 && (
         <Container
@@ -92,10 +92,38 @@ function SAboutRelease() {
           transition={{ duration: 0.4 }}
         >
           <Images>
-            <BlankBase />
-            <BlankBase />
-            <BlankBase />
-            <BlankBase />
+            <BlankBase
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs16.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <BlankBase
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs15.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <BlankBase
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs17.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <BlankBase
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs14.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
           </Images>
         </Container>
       )}

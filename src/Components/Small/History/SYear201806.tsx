@@ -79,14 +79,18 @@ const ImageOne = styled(motion.div)`
   width: 60vw;
   height: 25vw;
   border-radius: 20px;
+  background-image: url(${process.env.PUBLIC_URL}/img/cs9.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
-function SYear2019() {
+function SYear201806() {
   const { scrollYProgress } = useViewportScroll();
   const [isVisible1, setIsVisible1] = useState(false);
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.3) {
+      if (latest >= 0.6) {
         setIsVisible1(true);
       }
     });
@@ -98,21 +102,20 @@ function SYear2019() {
       <BoxOne />
       <YearZone>
         <Dot />
-        <Year>2014</Year>
+        <Year>2018.06</Year>
       </YearZone>
       <BoxTwo />
       <ContentZone>
         <FourTeen>
-          <p>Release 창립</p>
+          <p>Web App 해커톤</p>
           {isVisible1 && (
             <Detail
               initial={{ opacity: 0, scale: 1, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <p>2014년 3월,</p>
-              <p>서강대학교 컴퓨터공학과</p>
-              <p>프로젝트 학회 Release가 창립되었습니다.</p>
+              <p>2018년 6월,</p>
+              <p>Web App 해커톤 참가</p>
             </Detail>
           )}
           {isVisible1 && (
@@ -128,4 +131,4 @@ function SYear2019() {
   );
 }
 
-export default SYear2019;
+export default SYear201806;

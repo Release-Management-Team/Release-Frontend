@@ -60,6 +60,11 @@ const FourTeen = styled(motion.div)`
   p:nth-child(1) {
     color: #f6c015;
     font-size: 4vw;
+    margin-bottom: 0.5vw;
+  }
+  p:nth-child(2) {
+    color: #f6c015;
+    font-size: 4vw;
     margin-bottom: 2.7vw;
   }
 `;
@@ -80,14 +85,30 @@ const ImageOne = styled(motion.div)`
   width: 60vw;
   height: 25vw;
   border-radius: 20px;
+  background-image: url(${process.env.PUBLIC_URL}/img/cs5.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
-function SYear2014() {
+const appearVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { ease: "easeOut" } },
+};
+
+const wrapperVariants = {
+  hover: {
+    transition: { staggerChildren: 0.3 },
+    opacity: 1,
+  },
+};
+
+function SYear201808() {
   const { scrollYProgress } = useViewportScroll();
   const [isVisible1, setIsVisible1] = useState(false);
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.12) {
+      if (latest >= 0.68) {
         setIsVisible1(true);
       }
     });
@@ -99,21 +120,21 @@ function SYear2014() {
       <BoxOne />
       <YearZone>
         <Dot />
-        <Year>2014</Year>
+        <Year>2018.08</Year>
       </YearZone>
       <BoxTwo />
       <ContentZone>
         <FourTeen>
-          <p>Release 창립</p>
+          <p>RSoP</p>
+          <p>(Release Summer of Projects)</p>
           {isVisible1 && (
             <Detail
               initial={{ opacity: 0, scale: 1, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <p>2014년 3월,</p>
-              <p>서강대학교 컴퓨터공학과</p>
-              <p>프로젝트 학회 Release가 창립되었습니다.</p>
+              <p>2018년 8월,</p>
+              <p>RSoP (Release Summer of Projects) 진행</p>
             </Detail>
           )}
           {isVisible1 && (
@@ -129,4 +150,4 @@ function SYear2014() {
   );
 }
 
-export default SYear2014;
+export default SYear201808;

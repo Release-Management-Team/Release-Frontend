@@ -26,7 +26,7 @@ const Back = styled.div`
 const Blank = styled.div``;
 
 const Banner = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/img/bg1.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/cs13.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@ const ImageZone = styled(motion.div)`
 `;
 
 const Image1 = styled(motion.div)`
-  background-image: url(${process.env.PUBLIC_URL}/img/bg2.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/cs10.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -126,7 +126,7 @@ const Button = styled.button`
 `;
 
 const Image2 = styled(motion.div)`
-  background-image: url(${process.env.PUBLIC_URL}/img/bg3.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/cs12.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -255,19 +255,25 @@ function SmallAbout() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
           >
-            <p>상상을 현실로 구현하다</p>
+            <p>하고 싶은 것을 할 수 있는 곳</p>
           </BannerText>
           <Blank />
         </Banner>
       </Back>
       <Mission>
         <p>Mission</p>
-        <p>Release는 2014년에 창립된</p>
-        <p>서강대학교 컴퓨터공학과 유일의 프로젝트 학회로,</p>
-        <p>다양한 사람들이 모여</p>
-        <p>함께 프로젝트를 하기 위해 설립된 학회입니다.</p>
-        <p>전공을 불문하고 프로젝트를 하고 싶은 열정이 있는 사람,</p>
-        <p>능력이 있는 사람을 모집 중입니다.</p>
+        <p>Release는 다양한 실력을 갖춘 사람들이 서로 소통하며</p>
+        <p>새로운 지식과 경험을 쌓을 수 있는 환경을 제공하는 학회입니다.</p>
+        <p></p>
+        <p></p>
+        <p>자신이 하고 싶은 것을 찾으려는 사람들을 위해</p>
+        <p>누구나 참여할 수 있는 스터디, 세미나, 프로젝트 활동을 기획하고,</p>
+        <p>
+          Release만의 친목 이벤트를 통해 선후배의 경계가 없는 자유로운 문화를
+          형성하여,
+        </p>
+        <p>학회원들이 서로 지식을 교류하고 팀을 꾸려</p>
+        <p>프로젝트/대회/스타트업 등에 도전할 수 있도록 지원합니다.</p>
       </Mission>
       <ImageZone>
         <div></div>
@@ -290,11 +296,9 @@ function SmallAbout() {
             <p>
               다양한 프로젝트<span>를 진행합니다.</span>
             </p>
-            <p>Release에서는 웹 개발, 모바일 앱, 데이터 분석 등</p>
-            <p>다양한 프로젝트를 함께 진행합니다.</p>
-            <p>각자의 관심사와 목표에 맞춰 팀을 구성하고,</p>
-            <p>실제로 작동하는 결과물을 만들어내는 것을 목표로 합니다.</p>
-            <p>이를 통해 실무 경험을 쌓고, 협업 능력을 키울 수 있습니다.</p>
+            <p>Release에서는 자신이 진행하고 싶은 프로젝트가 있다면</p>
+            <p>팀원을 모아 함께 프로젝트를 진행할 수 있습니다.</p>
+            <p>그러기 위한 곳이니까요!</p>
             <Button>
               <p>지난 프로젝트 확인하기</p>
             </Button>
@@ -321,16 +325,10 @@ function SmallAbout() {
               심도 있는 전문 지식
               <span>을 공유합니다.</span>
             </p>
-            <p>
-              Release에서는 정기적으로 세미나를 개최하고, 스터디 모임을 가지며
-            </p>
-            <p>
-              최신 기술 동향을 탐구하고 심도 있는 전문 지식을 나누고 있습니다.
-            </p>
-            <p>
-              세미나에서는 각 분야의 전문가들이 참여해 고급 정보를 제공하며,
-            </p>
-            <p>이를 통해 회원들의 역량 강화를 도모합니다.</p>
+            <p>학회원들은 스터디를 열어 자신이 원하는 분야를</p>
+            <p>다른 학회원들과 함께 탐구하거나,</p>
+            <p>세미나를 통해 자신이 관심을 가지고,</p>
+            <p>좋아하는 내용에 대해 발표할 수 있습니다.</p>
           </Text2>
           <Blank />
         </Image2>

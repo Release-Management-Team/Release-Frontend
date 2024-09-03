@@ -86,16 +86,87 @@ function Slide() {
   return (
     <Wrapper>
       <Boxes ref={boxesRef} style={{ y: yTranslation }}>
-        <SlideBox ref={ref}>1</SlideBox>
-        <SlideBox>2</SlideBox>
-        <SlideBox>3</SlideBox>
-        <SlideBox>4</SlideBox>
-        <SlideBox>5</SlideBox>
-        <SlideBox>1</SlideBox>
-        <SlideBox>2</SlideBox>
-        <SlideBox>3</SlideBox>
-        <SlideBox>4</SlideBox>
-        <SlideBox>5</SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs18.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+          ref={ref}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs19.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs18.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs19.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
+        <SlideBox
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></SlideBox>
       </Boxes>
     </Wrapper>
   );

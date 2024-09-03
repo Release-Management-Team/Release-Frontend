@@ -9,11 +9,11 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   text-align: center;
   p:nth-child(1) {
-    font-size: 35px;
+    font-size: 2.4vw;
     margin-bottom: 35px;
   }
   p:nth-child(n + 2) {
-    font-size: 18px;
+    font-size: 1.3vw;
     color: #484848;
     margin-bottom: 8px;
   }
@@ -92,6 +92,12 @@ function AboutRelease() {
       <Images>
         {isVisible1 && (
           <Blank
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs16.jpg)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -100,6 +106,12 @@ function AboutRelease() {
 
         {isVisible1 && (
           <Blank
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs15.jpg)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -107,6 +119,12 @@ function AboutRelease() {
         )}
         {isVisible1 && (
           <Blank
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs17.jpg)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -114,6 +132,12 @@ function AboutRelease() {
         )}
         {isVisible1 && (
           <Blank
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs14.jpg)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}

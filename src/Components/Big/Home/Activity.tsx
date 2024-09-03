@@ -5,8 +5,9 @@ const Wrapper = styled.div`
 `;
 
 const First = styled.div`
-  padding-left: 80px;
-  padding-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Text = styled.div`
@@ -19,7 +20,7 @@ const Text = styled.div`
   }
   p:nth-child(n + 2) {
     color: #999999;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     margin-bottom: 8px;
   }
 `;

@@ -2,15 +2,26 @@ import styled from "styled-components";
 import { motion, useViewportScroll } from "framer-motion";
 import SHeader from "../../Components/Small/SHeader";
 import SFooter from "../../Components/Small/SFooter";
-import SYear2014 from "../../Components/Small/History/SYear2014";
-import SYear2019 from "../../Components/Small/History/SYear2019";
-import SYear2023 from "../../Components/Small/History/Syear2023";
+import SYear2014 from "../../Components/Small/History/SYear201401";
+import SYear2019 from "../../Components/Small/History/SYear201507";
+import SYear2023 from "../../Components/Small/History/Syear201510";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SYear201401 from "../../Components/Small/History/SYear201401";
+import SYear201507 from "../../Components/Small/History/SYear201507";
+import SYear201510 from "../../Components/Small/History/Syear201510";
+import SYear201511 from "../../Components/Small/History/Syear201511";
+import SYear201607 from "../../Components/Small/History/Syear201607";
+import SYear201609 from "../../Components/Small/History/SYear201609";
+import SYear201706 from "../../Components/Small/History/SYear201706";
+import SYear201806 from "../../Components/Small/History/SYear201806";
+import SYear201808 from "../../Components/Small/History/SYear201808";
+import SYear202308 from "../../Components/Small/History/SYear202308";
+import SYear202402 from "../../Components/Small/History/SYear202402";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 70px 250px 50px 450px 450px 450px 50px 360px 200px;
+  grid-template-rows: 70px 250px 50px 450px 450px 450px 450px 450px 450px 450px 450px 450px 450px 450px 50px 360px 200px;
   @media (max-width: 480px) {
     grid-template-rows: 70px 180px 30px 350px 350px 350px 30px 300px 180px;
   }
@@ -120,9 +131,17 @@ function SmallHistory() {
       <ShortLine>
         <ForLine />
       </ShortLine>
-      <SYear2014 />
-      <SYear2019 />
-      <SYear2023 />
+      <SYear201401 />
+      <SYear201507 />
+      <SYear201510 />
+      <SYear201511 />
+      <SYear201607 />
+      <SYear201609 />
+      <SYear201706 />
+      <SYear201806 />
+      <SYear201808 />
+      <SYear202308 />
+      <SYear202402 />
       <ShortLine>
         <ForLine>
           <Dot />
