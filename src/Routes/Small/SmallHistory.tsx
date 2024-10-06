@@ -21,12 +21,9 @@ import SYear202402 from "../../Components/Small/History/SYear202402";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 70px 250px 50px 450px 450px 450px 450px 450px 450px 450px 450px 450px 450px 450px 50px 360px 200px;
+  grid-template-rows: 70px 250px 50px 23vh 23vh 23vh 23vh 23vh 23vh 23vh 23vh 23vh 23vh 23vh 50px 360px 200px;
   @media (max-width: 480px) {
-    grid-template-rows: 70px 180px 30px 350px 350px 350px 30px 300px 180px;
-  }
-  @media (max-width: 420px) {
-    grid-template-rows: 70px 180px 30px 300px 300px 300px 30px 280px 180px;
+    grid-template-rows: 70px 180px 30px 15vh 15vh 15vh 15vh 15vh 15vh 15vh 15vh 15vh 15vh 15vh 30px 300px 180px;
   }
   background: radial-gradient(
     circle at 50% 300px,

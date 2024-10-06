@@ -11,7 +11,7 @@ interface HoverProps {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 90px 1800px 330px;
+  grid-template-rows: 90px auto 330px;
   background-color: #1c1c1c;
   @media (max-width: 1100px) {
     grid-template-rows: 90px 1450px 330px;
@@ -150,11 +150,14 @@ const ProjectLink = styled.div`
 const BoxHover = {
   start: {
     backgroundColor: "#1c1c1c",
+    transition: {
+      backgroundColor: { duration: 0 },
+    },
   },
   hover: {
     backgroundColor: "#e1e1e1",
     transition: {
-      backgroundColor: { duration: 0.5 },
+      backgroundColor: { duration: 0.1 },
     },
   },
 };

@@ -3,10 +3,11 @@ import Header from "../../Components/Big/Header";
 import Footer from "../../Components/Big/Footer";
 import { useViewportScroll, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 4000px 330px;
+  grid-template-rows: auto 330px;
   background-color: #1c1c1c;
   @media (max-width: 880px) {
     grid-template-rows: 3000px 250px;
@@ -32,7 +33,7 @@ const Back = styled.div`
 `;
 
 const Banner = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/img/cs13.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/about/about8.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -94,7 +95,7 @@ const ImageZone1 = styled.div`
 `;
 
 const Image1 = styled(motion.div)`
-  background-image: url(${process.env.PUBLIC_URL}/img/cs10.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/about/about6.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -134,7 +135,7 @@ const ProjectText = styled(motion.div)`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(motion(Link))`
   margin-top: 30px;
   width: 15vw;
   height: 3.3vw;
@@ -144,6 +145,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 1.15vw;
@@ -157,7 +159,7 @@ const ImageZone2 = styled(motion.div)`
   @media (max-width: 880px) {
     height: 615px;
   }
-  background-image: url(${process.env.PUBLIC_URL}/img/cs12.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/about/about2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -322,7 +324,7 @@ function About() {
               <p>Release에서는 자신이 진행하고 싶은 프로젝트가 있다면</p>
               <p>팀원을 모아 함께 프로젝트를 진행할 수 있습니다.</p>
               <p>그러기 위한 곳이니까요!</p>
-              <Button>
+              <Button to="/project">
                 <p>지난 프로젝트 확인하기</p>
               </Button>
             </ProjectText>
@@ -356,60 +358,6 @@ function About() {
         ) : (
           <Blank />
         )}
-        {isVisible3 ? (
-          <Seminar>
-            <SeminarText
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              <p>지난 학기 개최되었더 세미나</p>
-              <p>지난 학기, Release에서 총 00개의 세미나가 개최되었습니다.</p>
-            </SeminarText>
-            <SeminarContent
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 }}
-            >
-              <p>AI 혁신과 미래 : 인공지능의 최신 동향</p>
-              <p>서강대학교 신지원</p>
-            </SeminarContent>
-            <SeminarContent
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 }}
-            >
-              <p>블록체인과 분산 시스템의 진화</p>
-              <p>서강대학교 신지원</p>
-            </SeminarContent>
-            <SeminarContent
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 }}
-            >
-              <p>사이버 보안의 현재와 미래</p>
-              <p>서강대학교 신지원</p>
-            </SeminarContent>
-            <SeminarContent
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 }}
-            >
-              <p>클라우드 컴퓨팅</p>
-              <p>서강대학교 신지원</p>
-            </SeminarContent>
-            <SeminarContent
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 }}
-            >
-              <p>빅데이터 분석과 머신러닝 응용</p>
-              <p>서강대학교 신지원</p>
-            </SeminarContent>
-          </Seminar>
-        ) : (
-          <Blank2 />
-        )}
       </Back>
       <Footer />
     </Wrapper>
@@ -417,3 +365,58 @@ function About() {
 }
 
 export default About;
+
+// {isVisible3 ? (
+//   <Seminar>
+//     <SeminarText
+//       initial={{ opacity: 0, scale: 1, y: 15 }}
+//       animate={{ opacity: 1, scale: 1, y: 0 }}
+//       transition={{ duration: 0.4 }}
+//     >
+//       <p>지난 학기 개최되었더 세미나</p>
+//       <p>지난 학기, Release에서 총 00개의 세미나가 개최되었습니다.</p>
+//     </SeminarText>
+//     <SeminarContent
+//       initial={{ opacity: 0, scale: 1, y: 15 }}
+//       animate={{ opacity: 1, scale: 1, y: 0 }}
+//       transition={{ duration: 0.4, delay: 0.7 }}
+//     >
+//       <p>AI 혁신과 미래 : 인공지능의 최신 동향</p>
+//       <p>서강대학교 신지원</p>
+//     </SeminarContent>
+//     <SeminarContent
+//       initial={{ opacity: 0, scale: 1, y: 15 }}
+//       animate={{ opacity: 1, scale: 1, y: 0 }}
+//       transition={{ duration: 0.4, delay: 0.7 }}
+//     >
+//       <p>블록체인과 분산 시스템의 진화</p>
+//       <p>서강대학교 신지원</p>
+//     </SeminarContent>
+//     <SeminarContent
+//       initial={{ opacity: 0, scale: 1, y: 15 }}
+//       animate={{ opacity: 1, scale: 1, y: 0 }}
+//       transition={{ duration: 0.4, delay: 0.7 }}
+//     >
+//       <p>사이버 보안의 현재와 미래</p>
+//       <p>서강대학교 신지원</p>
+//     </SeminarContent>
+//     <SeminarContent
+//       initial={{ opacity: 0, scale: 1, y: 15 }}
+//       animate={{ opacity: 1, scale: 1, y: 0 }}
+//       transition={{ duration: 0.4, delay: 0.7 }}
+//     >
+//       <p>클라우드 컴퓨팅</p>
+//       <p>서강대학교 신지원</p>
+//     </SeminarContent>
+//     <SeminarContent
+//       initial={{ opacity: 0, scale: 1, y: 15 }}
+//       animate={{ opacity: 1, scale: 1, y: 0 }}
+//       transition={{ duration: 0.4, delay: 0.7 }}
+//     >
+//       <p>빅데이터 분석과 머신러닝 응용</p>
+//       <p>서강대학교 신지원</p>
+//     </SeminarContent>
+//   </Seminar>
+// ) : (
+//   <Blank2 />
+// )}

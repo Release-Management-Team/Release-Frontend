@@ -9,12 +9,13 @@ import SSlide from "../../Components/Small/Home/SSlide";
 import SSupport from "../../Components/Small/Home/SSupport";
 import SFooter from "../../Components/Small/SFooter";
 import { useEffect, useState } from "react";
+import SArrow from "../../Components/Small/Home/SArrow";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 70px 500px 950px 650px 450px 200px;
+  grid-template-rows: 70px 400px 100px 950px 650px 450px 200px;
   @media (max-width: 450px) {
-    grid-template-rows: 70px 350px 600px 450px 300px 180px;
+    grid-template-rows: 70px 280px 70px 600px 450px 300px 180px;
   }
   background: radial-gradient(
     circle at 50% 300px,
@@ -41,7 +42,7 @@ const ThirdBox = styled.div`
 `;
 
 const FourthBox = styled.div`
-  background-color: #1c1c1c;
+  background-color: rgba(240, 240, 240);
 `;
 
 function SmallHome() {
@@ -53,6 +54,7 @@ function SmallHome() {
           <SLogo />
           <SIntro />
         </FirstBox>
+        <SArrow />
         <SecondBox>
           <SAboutRelease />
         </SecondBox>

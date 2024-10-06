@@ -18,10 +18,10 @@ import Year202402 from "../../Components/Big/History/Year202402";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 90px 5700px 330px;
+  grid-template-rows: 90px auto 330px;
   background-color: #1c1c1c;
   @media (max-width: 880px) {
-    grid-template-rows: 70px 4000px 250px;
+    grid-template-rows: 70px 2700px 250px;
   }
 `;
 
@@ -109,6 +109,7 @@ const Box22 = styled.div`
 `;
 
 const Waiting = styled(motion.div)`
+  height: 50vh;
   margin-top: 5vw;
   display: flex;
   flex-direction: column;

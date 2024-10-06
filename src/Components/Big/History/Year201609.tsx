@@ -4,13 +4,14 @@ import styled from "styled-components";
 
 const First = styled(motion.div)`
   width: 100%;
-  height: 440px;
+  height: 32vh;
+  max-height: 265px;
   display: grid;
   grid-template-columns: 7fr 2fr 5fr;
-  grid-template-rows: 1fr 5.2fr;
+  grid-template-rows: 1fr 3.8fr;
   background: transparent;
   @media (max-width: 880px) {
-    height: 300px;
+    height: 180px;
   }
 `;
 
@@ -48,13 +49,13 @@ const NineTeen = styled(motion.div)`
   p:nth-child(2) {
     color: #f6c015;
     font-size: 2.2vw;
-    margin-bottom: 2.7vw;
+    margin-bottom: 1.7vw;
   }
   p:nth-child(n + 3) {
     color: #d9d9d9;
     font-size: 1.1vw;
     font-weight: 400;
-    margin-bottom: 1vw;
+    margin-bottom: 0.8vw;
   }
 `;
 
@@ -87,7 +88,7 @@ const Year = styled.div`
   position: absolute;
   left: 1.1vw;
   bottom: 0.7vw;
-  font-size: 2.15vw;
+  font-size: 1.7vw;
   color: #f6c015;
 `;
 
@@ -123,15 +124,7 @@ function Year201609() {
 
   return (
     <First>
-      <ImageZone>
-        {isVisible1 && (
-          <ImageBox
-            initial={{ opacity: 0, scale: 1, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          />
-        )}
-      </ImageZone>
+      <ImageZone></ImageZone>
       <ForLine1>
         <Year>2016.09</Year>
       </ForLine1>

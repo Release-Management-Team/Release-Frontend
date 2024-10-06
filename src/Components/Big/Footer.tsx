@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 4fr 6fr;
   position: relative;
+  min-height: 35vh;
 `;
 
 const Container = styled.div`
@@ -12,9 +13,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   left: 5.5vw;
-  top: 6vw;
+  top: 50px;
   position: absolute;
-  gap: 50px;
+  gap: 4vh;
 `;
 
 const FirstInfo = styled.div`
@@ -62,10 +63,8 @@ function Footer() {
           <PlusInfo>
             <p>서강대학교 컴퓨터공학과 프로젝트 학회</p>
             <Phone>
-              <p>
-                02-000-0000&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;00@sogang.ac.kr
-              </p>
-              <p>서강대학교 00관 00호</p>
+              <p>sogangrelease@gmail.com</p>
+              <p>서강대학교 아담샬(AS)관 1016호</p>
             </Phone>
           </PlusInfo>
         </FirstInfo>

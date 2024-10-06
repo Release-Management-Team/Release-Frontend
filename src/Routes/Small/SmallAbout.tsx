@@ -3,12 +3,13 @@ import SHeader from "../../Components/Small/SHeader";
 import SFooter from "../../Components/Small/SFooter";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 70px 430px 450px 300px 450px 500px 550px 200px;
+  grid-template-rows: 70px 430px 450px 300px 450px 500px 200px;
   @media (max-width: 450px) {
-    grid-template-rows: 70px 350px 370px 270px 350px 400px 450px 180px;
+    grid-template-rows: 70px 350px 370px 270px 350px 400px 180px;
   }
   background: radial-gradient(
     circle at 50% 300px,
@@ -26,7 +27,7 @@ const Back = styled.div`
 const Blank = styled.div``;
 
 const Banner = styled.div`
-  background-image: url(${process.env.PUBLIC_URL}/img/cs13.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/about/about8.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,7 +75,7 @@ const ImageZone = styled(motion.div)`
 `;
 
 const Image1 = styled(motion.div)`
-  background-image: url(${process.env.PUBLIC_URL}/img/cs10.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/about/about6.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -107,7 +108,7 @@ const ProjectsText = styled(motion.div)`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(motion(Link))`
   margin-top: 30px;
   width: 25vw;
   height: 6vw;
@@ -117,6 +118,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   p:nth-child(1) {
     margin: 0;
     font-size: 1.9vw;
@@ -126,7 +128,7 @@ const Button = styled.button`
 `;
 
 const Image2 = styled(motion.div)`
-  background-image: url(${process.env.PUBLIC_URL}/img/cs12.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/img/about/about2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -299,7 +301,7 @@ function SmallAbout() {
             <p>Release에서는 자신이 진행하고 싶은 프로젝트가 있다면</p>
             <p>팀원을 모아 함께 프로젝트를 진행할 수 있습니다.</p>
             <p>그러기 위한 곳이니까요!</p>
-            <Button>
+            <Button to="/project">
               <p>지난 프로젝트 확인하기</p>
             </Button>
           </ProjectsText>
@@ -335,7 +337,7 @@ function SmallAbout() {
       ) : (
         <Blank />
       )}
-      <Seminars>
+      {/* <Seminars>
         <Blank />
         {isVisible3 ? (
           <Seminar>
@@ -392,7 +394,7 @@ function SmallAbout() {
           <Blank />
         )}
         <Blank />
-      </Seminars>
+      </Seminars> */}
       <SFooter />
     </Wrapper>
   );

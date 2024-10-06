@@ -8,12 +8,12 @@ const Wrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   p:nth-child(1) {
-    color: #eeeeee;
+    color: #000000;
     font-size: 36px;
     margin-bottom: 36px;
   }
   p:nth-child(2) {
-    color: #999999;
+    color: #484848;
     font-size: 18px;
     margin-bottom: 8px;
   }
@@ -21,20 +21,20 @@ const Wrapper = styled(motion.div)`
 
 const ImageBase = styled.div`
   margin-top: 70px;
-  width: 600px;
+  width: 100%;
   height: 170px;
   @media (max-width: 1000px) {
-    width: 500px;
+    width: 100%;
   }
   display: flex;
   justify-content: space-between;
   gap: 200px;
-  filter: brightness(0) invert(1);
   img:nth-child(1) {
-    height: 6vw;
+    margin-left: 50px;
+    height: 9vw;
   }
   img:nth-child(2) {
-    height: 6vw;
+    height: 9vw;
   }
 `;
 
@@ -74,7 +74,7 @@ function Support() {
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            src={`${process.env.PUBLIC_URL}/img/naver.png`}
+            src={`${process.env.PUBLIC_URL}/img/support/naver.png`}
           />
         )}
         {isVisible1 && (
@@ -82,7 +82,7 @@ function Support() {
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            src={`${process.env.PUBLIC_URL}/img/mobis.png`}
+            src={`${process.env.PUBLIC_URL}/img/support/mobis.png`}
           />
         )}
       </Image>

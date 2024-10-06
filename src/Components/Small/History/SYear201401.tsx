@@ -6,7 +6,7 @@ const First = styled(motion.div)`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 7fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 1fr 3.8fr;
   background-color: #313131;
 `;
 
@@ -46,8 +46,8 @@ const Dot = styled.div`
 const Year = styled.div`
   position: absolute;
   left: 1.1vw;
-  bottom: 1.4vw;
-  font-size: 3.2vw;
+  bottom: 0.5vw;
+  font-size: 2.8vw;
   color: #f6c015;
 `;
 
@@ -119,13 +119,6 @@ function SYear201401() {
               <p>서강대학교 컴퓨터공학과</p>
               <p>프로젝트 학회 Release 창립</p>
             </Detail>
-          )}
-          {isVisible1 && (
-            <ImageOne
-              initial={{ opacity: 0, scale: 1, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            />
           )}
         </FourTeen>
       </ContentZone>

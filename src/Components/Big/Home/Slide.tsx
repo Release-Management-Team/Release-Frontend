@@ -88,7 +88,7 @@ function Slide() {
       <Boxes ref={boxesRef} style={{ y: yTranslation }}>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs18.jpg)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/home1.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -97,7 +97,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs19.jpg)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/slide2.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -105,7 +105,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/home2.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -113,7 +113,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/slide8.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -121,7 +121,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/home4.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -129,7 +129,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs18.jpg)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/home1.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -137,7 +137,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs19.jpg)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/slide2.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -145,7 +145,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/home2.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -153,7 +153,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/slide8.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -161,7 +161,7 @@ function Slide() {
         ></SlideBox>
         <SlideBox
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs5.png)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/slide/home4.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

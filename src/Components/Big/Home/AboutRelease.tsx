@@ -85,15 +85,13 @@ function AboutRelease() {
         Release는 2014년에 창립된 서강대학교 컴퓨터공학과 유일의 프로젝트
         학회로,
       </p>
-      <p>다양한 사람들이 모여 함께 프로젝트를 하기 위해 설립된 학회입니다.</p>
-      <p>
-        프로젝트를 하고 싶은 열정이 있는 사람, 능력이 있는 사람을 모집 중입니다.
-      </p>
+      <p>다양한 사람들이 모여 생각을 실현하는 학회입니다.</p>
+      <p>프로젝트를 하고자 하는 열정과 능력을 지닌 사람들과 함께합니다.</p>
       <Images>
         {isVisible1 && (
           <Blank
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs16.jpg)`,
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/home/home7.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -107,7 +105,7 @@ function AboutRelease() {
         {isVisible1 && (
           <Blank
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs15.jpg)`,
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/home/about1.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -120,7 +118,7 @@ function AboutRelease() {
         {isVisible1 && (
           <Blank
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs17.jpg)`,
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/home/home3.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -133,7 +131,7 @@ function AboutRelease() {
         {isVisible1 && (
           <Blank
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/cs14.jpg)`,
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/home/about7.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

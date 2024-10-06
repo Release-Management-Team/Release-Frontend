@@ -18,13 +18,13 @@ const Text = styled.div`
   text-align: start;
   margin-left: 15vw;
   p:nth-child(1) {
-    color: #eeeeee;
+    color: #000000;
     font-size: 5vw;
     margin-bottom: 5vw;
   }
   p:nth-child(2) {
     font-weight: 400;
-    color: #999999;
+    color: #484848;
     font-size: 2.4vw;
     margin-bottom: 2.2vw;
   }
@@ -36,7 +36,6 @@ const ImageBase = styled.div`
   display: flex;
   justify-content: center;
   gap: 50px;
-  filter: brightness(0) invert(1);
   img:nth-child(1) {
     height: 10vw;
   }
@@ -71,7 +70,7 @@ function SSupport() {
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            src={`${process.env.PUBLIC_URL}/img/naver.png`}
+            src={`${process.env.PUBLIC_URL}/img/support/naver.png`}
           />
         )}
         {isVisible1 && (
@@ -79,7 +78,7 @@ function SSupport() {
             initial={{ opacity: 0, scale: 1, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            src={`${process.env.PUBLIC_URL}/img/mobis.png`}
+            src={`${process.env.PUBLIC_URL}/img/support/mobis.png`}
           />
         )}
       </Image>

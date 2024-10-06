@@ -8,33 +8,24 @@ import Activity from "../../Components/Big/Home/Activity";
 import Support from "../../Components/Big/Home/Support";
 import Footer from "../../Components/Big/Footer";
 import Slide from "../../Components/Big/Home/Slide";
+import Arrow from "../../Components/Big/Home/Arrow";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 90px 800px 750px 750px 550px 330px;
+  grid-template-rows: 90px 600px 200px 750px 750px 550px 330px;
   background-color: #1c1c1c;
   @media (max-width: 1000px) {
-    grid-template-rows: 90px 500px 650px 550px 500px 250px;
+    grid-template-rows: 90px 400px 100px 650px 550px 500px 250px;
   }
   @media (max-width: 880px) {
-    grid-template-rows: 70px 500px 650px 550px 500px 250px;
+    grid-template-rows: 70px 400px 100px 650px 550px 500px 250px;
   }
+  background: radial-gradient(circle at 50% 25%, #303030, rgb(27, 27, 27) 20%);
 `;
 
 const Banner = styled.div`
   display: grid;
-  background: radial-gradient(
-    circle at 50% 700px,
-    #303030,
-    rgb(27, 27, 27) 60%
-  );
-  @media (max-width: 1000px) {
-    background: radial-gradient(
-      circle at 50% 450px,
-      #303030,
-      rgb(27, 27, 27) 60%
-    );
-  }
+  background: transparent;
   grid-template-columns: 1fr 1fr;
 `;
 
@@ -47,13 +38,13 @@ const SecondBox = styled.div`
 `;
 
 const ThirdBox = styled.div`
-  background-color: #292929;
+  background-color: #1b1b1b;
   display: grid;
   grid-template-columns: 7fr 6fr;
 `;
 
 const FourthBox = styled.div`
-  background-color: #1c1c1c;
+  background-color: rgba(240, 240, 240);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +62,7 @@ function Home() {
         <Logo />
         <Intro />
       </Banner>
+      <Arrow />
       <SecondBox>
         <AboutRelease />
       </SecondBox>

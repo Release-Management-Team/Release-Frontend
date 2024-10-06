@@ -58,8 +58,8 @@ const firstText = {
     opacity: 1,
     y: 0,
     transition: {
-      opacity: { delay: 2.5 },
-      y: { delay: 2.5 },
+      opacity: { delay: 2.7 },
+      y: { delay: 2.7 },
     },
   },
 };
@@ -73,8 +73,8 @@ const secondText = {
     opacity: 1,
     y: 0,
     transition: {
-      opacity: { delay: 2.9 },
-      y: { delay: 2.9 },
+      opacity: { delay: 2.7 },
+      y: { delay: 2.7 },
     },
   },
 };
@@ -88,8 +88,8 @@ const ThirdText = {
     opacity: 1,
     y: 0,
     transition: {
-      opacity: { delay: 3.3 },
-      y: { delay: 3.3 },
+      opacity: { delay: 2.7 },
+      y: { delay: 2.7 },
     },
   },
 };
@@ -123,9 +123,6 @@ function Intro() {
           src={`${process.env.PUBLIC_URL}/img/logo3.png`}
         />
       </Text>
-      <Button to="/apply" variants={btnMotion} initial="start" animate="end">
-        <p>지원하기</p>
-      </Button>
     </Wrapper>
   );
 }

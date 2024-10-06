@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 
 const First = styled(motion.div)`
   width: 100%;
-  height: 440px;
+  height: 32vh;
+  max-height: 265px;
   display: grid;
   grid-template-columns: 5fr 2fr 7fr;
-  grid-template-rows: 1fr 5.2fr;
+  grid-template-rows: 1fr 3.8fr;
   background-color: #373737;
   @media (max-width: 880px) {
-    height: 300px;
+    height: 180px;
   }
 `;
 
@@ -40,14 +41,14 @@ const TwentyThree = styled(motion.div)`
   right: calc(17%);
   p:nth-child(1) {
     color: #f6c015;
-    font-size: 2.2vw;
-    margin-bottom: 2.7vw;
+    font-size: 1.8vw;
+    margin-bottom: 1.7vw;
   }
   p:nth-child(n + 2) {
     color: #d9d9d9;
     font-size: 1.1vw;
     font-weight: 400;
-    margin-bottom: 1vw;
+    margin-bottom: 0.8vw;
   }
 `;
 
@@ -81,7 +82,7 @@ const Year = styled.div`
   position: absolute;
   right: 1.1vw;
   bottom: 0.7vw;
-  font-size: 2.15vw;
+  font-size: 1.7vw;
   color: #f6c015;
 `;
 
@@ -146,15 +147,7 @@ function Year201706() {
       <ForLine2>
         <Dot />
       </ForLine2>
-      <ImageZone>
-        {isVisible1 && (
-          <ImageBox
-            initial={{ opacity: 0, scale: 1, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          ></ImageBox>
-        )}
-      </ImageZone>
+      <ImageZone></ImageZone>
     </First>
   );
 }

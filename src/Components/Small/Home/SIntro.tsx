@@ -64,8 +64,8 @@ const secondText = {
     opacity: 1,
     y: 0,
     transition: {
-      opacity: { delay: 2.9 },
-      y: { delay: 2.9 },
+      opacity: { delay: 2.5 },
+      y: { delay: 2.5 },
     },
   },
 };
@@ -79,8 +79,8 @@ const ThirdText = {
     opacity: 1,
     y: 0,
     transition: {
-      opacity: { delay: 3.3 },
-      y: { delay: 3.3 },
+      opacity: { delay: 2.5 },
+      y: { delay: 2.5 },
     },
   },
 };
