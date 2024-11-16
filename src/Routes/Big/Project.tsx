@@ -57,12 +57,12 @@ const Title = styled.div`
   text-align: center;
   margin-bottom: 100px;
   p:nth-child(1) {
-    font-size: 3.2vw;
+    font-size: clamp(1px, 3.2vw, 60px);
     margin-bottom: 2.5vw;
     color: white;
   }
   p:nth-child(2) {
-    font-size: 1.2vw;
+    font-size: clamp(1px, 1.5vw, 30px);
     color: #d9d9d9;
   }
 `;

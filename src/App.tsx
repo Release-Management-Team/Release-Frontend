@@ -14,6 +14,7 @@ import Apply from "./Routes/Big/Apply";
 import SmallApply from "./Routes/Small/SmallApply";
 import SuccessPage from "./Components/Big/Apply/SuccessPage";
 import SSuccessPage from "./Components/Small/Apply/SSuccessPage";
+import { Helmet } from "react-helmet";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 730px)" });
@@ -26,6 +27,9 @@ function App() {
 
   return (
     <HashRouter>
+      <Helmet>
+        <title>Release</title>
+      </Helmet>
       <Routes>
         <Route path="about" element={<SelectAbout />}></Route>
         <Route path="history" element={<SelectHistory />}></Route>

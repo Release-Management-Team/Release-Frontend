@@ -9,11 +9,11 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   text-align: center;
   p:nth-child(1) {
-    font-size: 2.4vw;
+    font-size: clamp(1px, 2.4vw, 55px);
     margin-bottom: 35px;
   }
   p:nth-child(n + 2) {
-    font-size: 1.3vw;
+    font-size: clamp(1px, 1.3vw, 30px);
     color: #484848;
     margin-bottom: 8px;
   }

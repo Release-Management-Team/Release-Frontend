@@ -43,17 +43,17 @@ const NineTeen = styled(motion.div)`
   text-align: end;
   p:nth-child(1) {
     color: #f6c015;
-    font-size: 2.2vw;
+    font-size: clamp(1px, 2.2vw, 50px);
     margin-bottom: 1.1vw;
   }
   p:nth-child(2) {
     color: #f6c015;
-    font-size: 2.2vw;
+    font-size: clamp(1px, 2.2vw, 50px);
     margin-bottom: 1.7vw;
   }
   p:nth-child(n + 3) {
     color: #d9d9d9;
-    font-size: 1.1vw;
+    font-size: clamp(1px, 1.1vw, 25px);
     font-weight: 400;
     margin-bottom: 0.8vw;
   }
@@ -88,7 +88,10 @@ const Year = styled.div`
   position: absolute;
   left: 1.1vw;
   bottom: 0.7vw;
-  font-size: 1.7vw;
+  @media (min-width: 2500px) {
+    bottom: 0.4vw;
+  }
+  font-size: clamp(1px, 1.7vw, 30px);
   color: #f6c015;
 `;
 

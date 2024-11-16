@@ -15,12 +15,12 @@ const Text = styled.div`
   flex-direction: column;
   p:nth-child(1) {
     color: #eeeeee;
-    font-size: 2.4vw;
+    font-size: clamp(1px, 2.4vw, 55px);
     margin-bottom: 36px;
   }
   p:nth-child(n + 2) {
     color: #999999;
-    font-size: 1.3vw;
+    font-size: clamp(1px, 1.3vw, 30px);
     margin-bottom: 8px;
   }
 `;

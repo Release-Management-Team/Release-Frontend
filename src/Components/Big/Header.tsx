@@ -72,7 +72,9 @@ const Box = styled.div`
 
 const Button = styled(Link)<ContentProps>`
   width: 8.5vw;
+  max-width: 200px;
   height: 3.2vw;
+  max-height: 70px;
   background-color: #f6c015;
   border: none;
   border-radius: 0.5vw;
@@ -82,7 +84,7 @@ const Button = styled(Link)<ContentProps>`
   text-decoration: none;
   p:nth-child(1) {
     margin: 0;
-    font-size: 1.3vw;
+    font-size: clamp(1px, 1.3vw, 30px);
     color: black;
   }
 `;

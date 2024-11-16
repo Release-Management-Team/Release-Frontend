@@ -41,12 +41,12 @@ const TwentyThree = styled(motion.div)`
   right: calc(17%);
   p:nth-child(1) {
     color: #f6c015;
-    font-size: 1.6vw;
+    font-size: clamp(1px, 1.6vw, 30px);
     margin-bottom: 1.7vw;
   }
   p:nth-child(n + 2) {
     color: #d9d9d9;
-    font-size: 1vw;
+    font-size: clamp(1px, 1vw, 20px);
     font-weight: 400;
     margin-bottom: 0.8vw;
   }
@@ -82,7 +82,10 @@ const Year = styled.div`
   position: absolute;
   right: 1.1vw;
   bottom: 0.7vw;
-  font-size: 1.7vw;
+  @media (min-width: 2500px) {
+    bottom: 0.4vw;
+  }
+  font-size: clamp(1px, 1.7vw, 30px);
   color: #f6c015;
 `;
 

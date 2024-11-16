@@ -9,12 +9,12 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   p:nth-child(1) {
     color: #000000;
-    font-size: 36px;
+    font-size: clamp(1px, 2.4vw, 55px);
     margin-bottom: 36px;
   }
   p:nth-child(2) {
     color: #484848;
-    font-size: 18px;
+    font-size: clamp(1px, 1.3vw, 30px);
     margin-bottom: 8px;
   }
 `;
@@ -32,9 +32,11 @@ const ImageBase = styled.div`
   img:nth-child(1) {
     margin-left: 50px;
     height: 9vw;
+    max-height: 200px;
   }
   img:nth-child(2) {
     height: 9vw;
+    max-height: 200px;
   }
 `;
 

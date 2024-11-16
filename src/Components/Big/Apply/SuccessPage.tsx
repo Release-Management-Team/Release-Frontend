@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 90px 660px 330px;
+  grid-template-rows: 90px 1500px 330px;
   background: radial-gradient(
     circle at 50% 420px,
     #303030,

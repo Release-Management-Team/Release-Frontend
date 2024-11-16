@@ -109,6 +109,7 @@ function Logo() {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="43vw"
+          style={{ maxWidth: "800px" }}
           viewBox="0 0 400 100"
         >
           <g transform="scale(0.1, 0.1)" fill-rule="evenodd">
@@ -167,6 +168,7 @@ function Logo() {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="43vw"
+          style={{ maxWidth: "800px" }}
           viewBox="0 0 400 100"
         >
           <g transform="scale(0.1, 0.1)" fill-rule="evenodd">
@@ -232,6 +234,7 @@ function Logo() {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="43vw"
+          style={{ maxWidth: "800px" }}
           viewBox="0 0 400 100"
         >
           <g transform="scale(0.1, 0.1)" fill-rule="evenodd">
@@ -297,6 +300,7 @@ function Logo() {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="21vw"
+          style={{ maxWidth: "370px" }}
           viewBox="0 0 260 310"
         >
           <g transform="scale(0.1, 0.1)" fill-rule="evenodd">

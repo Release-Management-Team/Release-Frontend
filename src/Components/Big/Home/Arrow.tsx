@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 const Icon = styled(motion.div)`
   img {
     width: 4.5vw;
+    max-width: 80px;
     filter: brightness(0) invert(1);
     @media (max-width: 1000px) {
       width: 35px;

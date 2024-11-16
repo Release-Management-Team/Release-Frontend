@@ -59,6 +59,7 @@ const BannerText = styled(motion.div)`
   p:nth-child(1) {
     color: white;
     font-size: 3.3vw;
+    font-size: clamp(1px, 3.3vw, 70px);
   }
 `;
 
@@ -75,13 +76,19 @@ const Mission = styled.div`
   flex-direction: column;
   color: white;
   p:nth-child(1) {
-    font-size: 3.3vw;
+    font-size: clamp(1px, 3.3vw, 60px);
     margin-bottom: 3vw;
+    @media (min-width: 2500px) {
+      margin-bottom: 1.5vw;
+    }
   }
   p:nth-child(n + 2) {
     color: #d9d9d9;
-    font-size: 1.6vw;
+    font-size: clamp(1px, 1.6vw, 30px);
     margin-bottom: 0.7vw;
+    @media (min-width: 2500px) {
+      margin-bottom: 0.5vw;
+    }
   }
 `;
 
@@ -121,24 +128,32 @@ const ProjectText = styled(motion.div)`
   align-items: end;
   justify-content: center;
   p:nth-child(1) {
-    font-size: 3.3vw;
+    font-size: clamp(1px, 3.3vw, 60px);
     color: white;
     margin-bottom: 2.7vw;
+    @media (min-width: 2500px) {
+      margin-bottom: 1.5vw;
+    }
     span {
       color: #999999;
     }
   }
   p:nth-child(n + 2) {
-    font-size: 1.5vw;
+    font-size: clamp(1px, 1.5vw, 28px);
     color: #d9d9d9;
     margin-bottom: 1vw;
+    @media (min-width: 2500px) {
+      margin-bottom: 0.5vw;
+    }
   }
 `;
 
 const Button = styled(motion(Link))`
   margin-top: 30px;
   width: 15vw;
+  max-width: 400px;
   height: 3.3vw;
+  max-height: 70px;
   background: transparent;
   border: 1px solid #f6c015;
   border-radius: 7vw;
@@ -148,7 +163,7 @@ const Button = styled(motion(Link))`
   text-decoration: none;
   p:nth-child(1) {
     margin: 0;
-    font-size: 1.15vw;
+    font-size: clamp(1px, 1.15vw, 30px);
     font-weight: 400;
     color: #b6b6b6;
   }
@@ -172,17 +187,23 @@ const Text2 = styled(motion.div)`
   left: 6.2vw;
   bottom: 3.2vw;
   p:nth-child(1) {
-    font-size: 3.3vw;
+    font-size: clamp(1px, 3.3vw, 60px);
     color: white;
     margin-bottom: 2.7vw;
+    @media (min-width: 2500px) {
+      margin-bottom: 1.5vw;
+    }
     span {
       color: #999999;
     }
   }
   p:nth-child(n + 2) {
-    font-size: 1.5vw;
+    font-size: clamp(1px, 1.5vw, 30px);
     color: #d9d9d9;
     margin-bottom: 1vw;
+    @media (min-width: 2500px) {
+      margin-bottom: 0.5vw;
+    }
   }
 `;
 

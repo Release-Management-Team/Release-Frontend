@@ -15,16 +15,17 @@ const Text = styled(motion.div)`
   text-align: end;
   box-sizing: border-box;
   p:nth-child(1) {
-    font-size: 3.5vw;
+    font-size: clamp(1px, 3.5vw, 90px);
     color: white;
   }
   p:nth-child(2) {
-    font-size: 1.8vw;
+    font-size: clamp(1px, 1.8vw, 60px);
     color: #eeeeee;
     padding-top: 3vw;
   }
   img:nth-child(3) {
     width: 38vw;
+    max-width: 1000px;
     padding-top: 2.4vw;
     position: relative;
   }

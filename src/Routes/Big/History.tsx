@@ -51,7 +51,7 @@ const Title = styled.div`
   text-align: center;
   margin-bottom: 60px;
   p:nth-child(1) {
-    font-size: 47px;
+    font-size: clamp(1px, 3.3vw, 60px);
     margin-bottom: 2.5vw;
     color: white;
     @media (max-width: 880px) {
@@ -59,7 +59,7 @@ const Title = styled.div`
     }
   }
   p:nth-child(2) {
-    font-size: 18px;
+    font-size: clamp(1px, 1.5vw, 30px);
     color: #d9d9d9;
     @media (max-width: 880px) {
       font-size: 12px;
